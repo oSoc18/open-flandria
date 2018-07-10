@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        /**Schema::create('projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idUser');
             $table->string('location');
@@ -21,8 +21,8 @@ class CreateProjectsTable extends Migration
             $table->string('creator');
             $table->timestamps();
 
-            $table->foreign('idUser')->references('id')->on('users');
-        });*/
+            //$table->foreign('idUser')->references('id')->on('users');
+        });
     }
 
     /**

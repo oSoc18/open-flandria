@@ -15,14 +15,11 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('imageFiles');
-            $table->string('imageCredit');
-            $table->string('copyrightStatus');
-            $table->string('yearOfPicture');
-            $table->string('onlineLinkOfTheImage');
+            $table->integer('file');
+            $table->string('credit');
+            $table->string('copyright');
+            $table->string('year');
             $table->timestamps();
-
-            $table->$table->foreign('idProject')->references('id')->on('projects');
         });
     }
 

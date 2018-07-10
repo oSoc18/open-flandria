@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Projects;
+use App\Image;
 use Illuminate\Http\Request;
 
-class ProjectsController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     //fhjdshfjsdhjhfjsdfhsdjhjf
     public function index()
     {
         //
@@ -42,10 +41,10 @@ class ProjectsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Projects  $projects
+     * @param  \App\Images  $images
      * @return \Illuminate\Http\Response
      */
-    public function show(Projects $projects)
+    public function show(Images $images)
     {
         //
     }
@@ -53,10 +52,10 @@ class ProjectsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Projects  $projects
+     * @param  \App\Images  $images
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projects $projects)
+    public function edit(Images $images)
     {
         //
     }
@@ -65,10 +64,10 @@ class ProjectsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Projects  $projects
+     * @param  \App\Images  $images
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projects $projects)
+    public function update(Request $request, Images $images)
     {
         //
     }
@@ -76,10 +75,10 @@ class ProjectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Projects  $projects
+     * @param  \App\Images  $images
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projects $projects)
+    public function destroy(Images $images)
     {
         //
     }
