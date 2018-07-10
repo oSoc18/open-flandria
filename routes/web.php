@@ -12,5 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+/* I was just testing things
+
+**/
+
+    $task = [
+
+    "un",
+    "deux",
+    "trois"
+
+    ];
+
+    return view('welcome', compact ('task'));
+
+
 });
