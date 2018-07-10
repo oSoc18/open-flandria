@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('index');
+
+Route::get('/settings', ['as' => 'users.settings', 'uses' => 'UserController@index'])->middleware('auth');
+Route::put('/settings/edit', 'UserController@edit')->middleware('auth');
+Route::delete('/settings/remove', 'UserController@destroy')->middleware('auth');
+
+Auth::routes();
