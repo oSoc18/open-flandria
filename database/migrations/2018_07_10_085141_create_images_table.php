@@ -18,11 +18,11 @@ class CreateImagesTable extends Migration
             $table->string('file');
             $table->string('credit');
             $table->string('copyright');
-            $table->date('year');
+            $table->integer('year');
             $table->timestamps();
 
-	        $table->integer('project_id')->unsigned()->index()->nullable();
-	        $table->foreign('project_id')->references('id')->on('users');
+	        $table->integer('project_id')->unsigned()->index();
+	        $table->foreign('project_id')->references('id')->on('projects');
         });
     }
 
