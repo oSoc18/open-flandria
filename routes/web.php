@@ -12,20 +12,11 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+})->name('index');
 
-/* I was just testing things
+Route::get('/settings', ['as' => 'users.settings', 'uses' => 'UserController@index'])->middleware('auth');
+Route::put('/settings/edit', 'UserController@edit')->middleware('auth');
+Route::delete('/settings/remove', 'UserController@destroy')->middleware('auth');
 
-**/
-
-    $task = [
-
-    "un",
-    "deux",
-    "trois"
-
-    ];
-
-    return view('welcome', compact ('task'));
-
-
-});
+Auth::routes();
