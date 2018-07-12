@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Image;
 use Illuminate\Http\Request;
+use Validator;
+
 
 class ProjectController extends Controller
 {
@@ -15,6 +18,11 @@ class ProjectController extends Controller
     public function index()
     {
         //
+        $project = Project::select('id','title','location','year','creator')->get();;
+
+        $projectImage= Image::select('file','credit','copyright','year')->get();
+
+        return view('project.index')->with('project',$project)->with('projectImages', $projectImage);
     }
 
     /**
@@ -44,9 +52,13 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function show(Projects $projects)
+    public function show($id)
     {
         //
+        $project = Project::select('title','location','year','creator')->where('id', $id)->get();
+
+        return view('project.show',compact('project', $project));
+
     }
 
     /**
@@ -55,9 +67,28 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projects $projects)
+    public function edit(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'creator' => 'required',
+            'year' => 'required',
+            
+        ]); 
+
+        $project = Project::find($id);
+
+        $project->title = $validated['title'];
+        $project->location = $validated['location'];
+        $project->creator = $validated['creator'];
+        $project->year = $validated['year'];
+
+        $project->save();
+
+        return redirect()->route('index');
+
+
     }
 
     /**
@@ -67,9 +98,10 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projects $projects)
+    public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        return view('project.update')->with('project',$project);
     }
 
     /**
@@ -78,8 +110,13 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projects $projects)
+    public function destroy($id)
     {
-        //
+        
+        $project = Project::find($id);
+
+            $project->delete();
+    
+            return redirect()->route('index');
     }
 }
