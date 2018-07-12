@@ -21,6 +21,8 @@ Route::put('/project/edit/{id}', 'ProjectController@edit');
 Route::get('/project/update/{id}', 'ProjectController@update');
 Route::delete('project/remove/{id}', 'ProjectController@destroy');
 
+Route::get('/upload', 'ProjectController@create')->middleware('auth');
+Route::post('/upload', 'ProjectController@store')->middleware('auth');
 
 Route::get('/settings', ['as' => 'users.settings', 'uses' => 'UserController@index'])->middleware('auth');
 Route::put('/settings/edit', 'UserController@edit')->middleware('auth');

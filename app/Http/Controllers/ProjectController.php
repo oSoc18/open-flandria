@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Project;
 use App\Image;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.upload');
     }
 
     /**
@@ -43,7 +44,23 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = new Project;
+        $project->title = $request['title'];
+        $project->location = $request['location'];
+        $project->year = Carbon::now();
+        $project->creator = $request['creator'];
+        $project->save();
+
+
+        $files = $request->file('images');
+        if($request->hasFile('images')) {
+            foreach($files as $file) {
+                $image = new Image;
+                $path = $file->store('projects');
+                $image->file = $path;
+                $image->project_id = $project->id;
+            }
+        }
     }
 
     /**

@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
 	    
             $table->integer('user_id')->unsigned()->index()->nullable();
-	    $table->foreign('user_id')->references('id')->on('users');
+	        $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
