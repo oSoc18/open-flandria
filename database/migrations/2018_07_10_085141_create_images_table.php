@@ -21,8 +21,8 @@ class CreateImagesTable extends Migration
             $table->date('year');
             $table->timestamps();
 
-	    $table->integer('project_id')->unsigned()->index();
-	    $table->foreign('project_id')->references('id')->on('projects');
+	        $table->integer('project_id')->unsigned()->index();
+	        $table->foreign('project_id')->references('id')->on('projects');
         });
     }
 

@@ -18,12 +18,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
-        $project = Project::select('id','title','location','year','creator')->get();;
+        $projects = Project::all();
 
-        $projectImage= Image::select('file','credit','copyright','year')->get();
-
-        return view('project.index')->with('project',$project)->with('projectImages', $projectImage);
+        return view('project.index')->with('projects', $projects);
     }
 
     /**
@@ -71,10 +68,8 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
-        $project = Project::select('title','location','year','creator')->where('id', $id)->get();
-
-        return view('project.show',compact('project', $project));
+        $project = Project::find($id);
+        return view('project.show')->with('project',  $project);
 
     }
 
@@ -91,21 +86,16 @@ class ProjectController extends Controller
             'location' => 'required',
             'creator' => 'required',
             'year' => 'required',
-            
         ]); 
 
         $project = Project::find($id);
-
         $project->title = $validated['title'];
         $project->location = $validated['location'];
         $project->creator = $validated['creator'];
         $project->year = $validated['year'];
-
         $project->save();
 
         return redirect()->route('index');
-
-
     }
 
     /**
@@ -118,7 +108,7 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $project = Project::find($id);
-        return view('project.update')->with('project',$project);
+        return view('project.update')->with('project', $project);
     }
 
     /**
@@ -129,11 +119,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        
         $project = Project::find($id);
-
-            $project->delete();
-    
-            return redirect()->route('index');
+        $project->delete();
+        return redirect()->route('index');
     }
 }
