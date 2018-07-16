@@ -12,7 +12,7 @@
 <div class="row">
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-
+            <img src="test.png">
             <div class="caption">
               <li>Title: {{$project->title}}</li> 
               <p><li>Location: {{$project->location}}</li></p>
