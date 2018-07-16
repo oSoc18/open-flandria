@@ -20,3 +20,14 @@ Route::put('/settings/edit', 'UserController@edit')->middleware('auth');
 Route::delete('/settings/remove', 'UserController@destroy')->middleware('auth');
 
 Auth::routes();
+
+Route::get('login', 'Auth\LoginController@showLoginForm')->middleware('guest');
+Route::post('login', 'Auth\LoginController@login')->middleware('guest');
+Route::get('logout', 'Auth\LoginController@logout')->middleware('auth');
+
+Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('register', 'Auth\RegisterController@register');
+
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
+Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');

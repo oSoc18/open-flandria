@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        @if (Auth::user())
+                        @if (Auth::user()->hasAnyRole('admin'))
+                        <div class="form-group row">
+                            <label for="role">Role: </label>
+                            <select id="role" name="role">
+                                <option value="user">User</option>
+                                <option value="contributor">Contributor</option>
+                                <option value="reviewer">Reviewer</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        @endif
+                        @endif
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

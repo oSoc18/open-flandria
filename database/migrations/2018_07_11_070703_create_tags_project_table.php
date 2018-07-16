@@ -16,11 +16,11 @@ class CreateTagsProjectTable extends Migration
         Schema::create('tags_project', function (Blueprint $table) {
             $table->increments('id');
 
-	    $table->integer('project_id')->unsigned()->index();
-	    $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+	        $table->integer('project_id')->unsigned()->index();
+	        $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
 
-	    $table->integer('tag_id')->unsigned()->index();
-	    $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+	        $table->integer('tag_id')->unsigned()->index();
+	        $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
