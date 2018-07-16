@@ -28,6 +28,21 @@ class User extends Authenticatable
     ];
 
     public function projects() {
-	return $this->hasMany('App\Project');
+	    return $this->hasMany('App\Project');
+    }
+
+    public function roles() {
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function authorizeRoles($roles) {
+        return $this->hasAnyRole($roles) || abort(401, "This action is unauthorized");
+    }
+
+    public function hasAnyRole($roles) {
+        if(is_array($roles)) {
+            return null !== $this->roles()->whereIn(‘name’, $roles)->first();
+        }
+        return null !== $this->roles()->where(‘name’, $roles)->first();
     }
 }
