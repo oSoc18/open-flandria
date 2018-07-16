@@ -16,20 +16,20 @@
 
 
 <div class="row">
-@foreach ($project as $project)
+@foreach ($projects as $project)
 
 
 
 
         <div class="col-sm-5 col-md-3">
           <div class="thumbnail">
-            <img src="test.png">
+            <img src="<?php echo asset("storage/".$project->images->first()['file'])?>">
             <div class="caption">
               <li>Title: {{$project->title}}</li> 
               <p><li>Location: {{$project->location}}</li></p>
               <p><li>Creator: {{$project->creator}}</li></p>
               <p><li>Year: {{$project->year}}</li></p>
-              <p><a href="http://127.0.0.1:8000/project/update/{{$project->id}}" class="btn btn-primary" ><input type="submit"   value="Update settings" class="btn btn-primary">  </a>
+              <p><a href="/project/update/{{$project->id}}" class="btn btn-primary" ><input type="submit"   value="Update settings" class="btn btn-primary">  </a>
             </div>
           </div>
         </div>

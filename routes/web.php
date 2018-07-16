@@ -16,8 +16,8 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/project', 'ProjectController@index');
-Route::get('/project/{id}', 'ProjectController@show');
-Route::put('/project/edit/{id}', 'ProjectController@edit');
+Route::get('/project/{project}', 'ProjectController@show');
+Route::put('/project/edit/{project}', 'ProjectController@edit');
 Route::get('/project/update/{id}', 'ProjectController@update');
 Route::delete('project/remove/{id}', 'ProjectController@destroy');
 
