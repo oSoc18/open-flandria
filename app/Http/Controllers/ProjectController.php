@@ -30,7 +30,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.upload');
+        return view('project.upload');
     }
 
     /**
@@ -53,7 +53,7 @@ class ProjectController extends Controller
         if($request->hasFile('images')) {
             foreach($files as $file) {
                 $image = new Image;
-                $path = $file->store('projects');
+                $path = $file->store('project/'.$project->id);
                 $image->file = $path;
                 $image->project_id = $project->id;
             }

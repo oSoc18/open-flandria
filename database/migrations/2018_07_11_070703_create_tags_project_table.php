@@ -13,14 +13,14 @@ class CreateTagsProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags_project', function (Blueprint $table) {
+        Schema::create('project_tag', function (Blueprint $table) {
             $table->increments('id');
 
-	    $table->integer('project_id')->unsigned()->index();
-	    $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+	        $table->integer('project_id')->unsigned()->index();
+	        $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
 
-	    $table->integer('tag_id')->unsigned()->index();
-	    $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+	        $table->integer('tag_id')->unsigned()->index();
+	        $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
