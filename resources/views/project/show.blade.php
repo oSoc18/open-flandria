@@ -9,7 +9,7 @@
 
 <ul>
 
-        <li>{{$project[0]->year}}</li> 
+        <li>{{$project->year}}</li> 
 
 </ul>
 
