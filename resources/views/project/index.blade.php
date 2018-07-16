@@ -4,13 +4,24 @@
 @section('content')
 
 
+<h1>All projects: </h1>
 
+
+ <div class="jumbotron">
+        <h1>Project of the week:</h1>
+        <p><img src="test.jpg"></p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">See the project </a></p>
+       
+</div>
+
+
+<div class="row">
 @foreach ($project as $project)
 
 
 
-<div class="row">
-        <div class="col-sm-6 col-md-4">
+
+        <div class="col-sm-5 col-md-3">
           <div class="thumbnail">
             <img src="test.png">
             <div class="caption">
@@ -22,11 +33,11 @@
             </div>
           </div>
         </div>
-      </div>
+     
 
 
 @endforeach   
-
+</div>
 
 @endsection
 
