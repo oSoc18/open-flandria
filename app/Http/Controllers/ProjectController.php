@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Project;
+use App\Image;
 use Illuminate\Http\Request;
+use Validator;
+
 
 class ProjectController extends Controller
 {
@@ -14,7 +18,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::all();
+
+        return view('project.index')->with('projects', $projects);
     }
 
     /**
@@ -24,7 +30,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.upload');
     }
 
     /**
@@ -35,7 +41,23 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = new Project;
+        $project->title = $request['title'];
+        $project->location = $request['location'];
+        $project->year = Carbon::now();
+        $project->creator = $request['creator'];
+        $project->save();
+
+
+        $files = $request->file('images');
+        if($request->hasFile('images')) {
+            foreach($files as $file) {
+                $image = new Image;
+                $path = $file->store('projects');
+                $image->file = $path;
+                $image->project_id = $project->id;
+            }
+        }
     }
 
     /**
@@ -44,9 +66,11 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function show(Projects $projects)
+    public function show($id)
     {
-        //
+        $project = Project::find($id);
+        return view('project.show')->with('project',  $project);
+
     }
 
     /**
@@ -55,9 +79,23 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projects $projects)
+    public function edit(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'creator' => 'required',
+            'year' => 'required',
+        ]); 
+
+        $project = Project::find($id);
+        $project->title = $validated['title'];
+        $project->location = $validated['location'];
+        $project->creator = $validated['creator'];
+        $project->year = $validated['year'];
+        $project->save();
+
+        return redirect()->route('index');
     }
 
     /**
@@ -67,9 +105,10 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projects $projects)
+    public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        return view('project.update')->with('project', $project);
     }
 
     /**
@@ -78,8 +117,10 @@ class ProjectController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projects $projects)
+    public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        $project->delete();
+        return redirect()->route('index');
     }
 }
