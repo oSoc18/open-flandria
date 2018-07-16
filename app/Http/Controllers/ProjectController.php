@@ -56,7 +56,7 @@ class ProjectController extends Controller
         foreach ($tagNames as $tagName) {
             $tagName = trim($tagName);
             $tag = Tag::where('name', $tagName)->first();
-            if (!$tag->count()) {
+            if ($tag) {
                 $tag = new Tag;
                 $tag->name = $tagName;
                 $tag->save();
