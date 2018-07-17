@@ -20,6 +20,7 @@ Route::get('/project/{project}', 'ProjectController@show');
 Route::put('/project/edit/{project}', 'ProjectController@edit');
 Route::get('/project/update/{id}', 'ProjectController@update');
 Route::delete('project/remove/{id}', 'ProjectController@destroy');
+route::get('/projects/{search}', 'ProjectController@search');
 
 Route::get('/upload', 'ProjectController@create')->middleware('auth');
 Route::post('/upload', 'ProjectController@store')->middleware('auth');

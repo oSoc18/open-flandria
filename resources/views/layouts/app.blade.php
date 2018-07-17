@@ -37,8 +37,16 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+    <!-- Search Barr -->
+                <form class="navbar-form navbar-right" role="search" action="/projects/search" method="GET">
+                    @method('GET')
+                    @csrf
+                        <div class="form-group" style="display:inline-block">
+                          <input type="text" id='search' name='search' class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default" style="display:inline-block">Submit</button>
 
-
+                </form>
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

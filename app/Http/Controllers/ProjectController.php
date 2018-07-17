@@ -25,6 +25,26 @@ class ProjectController extends Controller
         return view('project.index')->with('projects', $projects);
     }
 
+    public function search(Request $request){
+
+        
+        $tagName = $request->input('search');
+
+        $tag = Tag::where('name', $tagName)->first();
+
+        if($tag){
+            $projects = $tag->projects;
+            if(!$projects->isEmpty()){
+                return view('project.show')->with('projects', $projects)->with('tagName',$tagName);
+            }
+        }
+            $projects = null;
+            $error = 'No result founded';
+            return view('project.show')->with('error',$error)->with('projects',$projects)->with('tagName',$tagName);
+        
+
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -56,7 +76,7 @@ class ProjectController extends Controller
         foreach ($tagNames as $tagName) {
             $tagName = trim($tagName);
             $tag = Tag::where('name', $tagName)->first();
-            if ($tag) {
+            if (!$tag) {
                 $tag = new Tag;
                 $tag->name = $tagName;
                 $tag->save();
