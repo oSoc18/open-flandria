@@ -15,19 +15,27 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/settings', ['as' => 'users.settings', 'uses' => 'UserController@index'])->middleware('auth');
+Route::get('/settings', 'UserController@index')->middleware('auth')->name('users.settings');
 Route::put('/settings/edit', 'UserController@edit')->middleware('auth');
 Route::delete('/settings/remove', 'UserController@destroy')->middleware('auth');
 
-Auth::routes();
+Route::get('/upload', 'ProjectController@create')->name('upload');
+Route::post('/upload', 'ProjectController@store');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->middleware('guest');
-Route::post('login', 'Auth\LoginController@login')->middleware('guest');
-Route::get('logout', 'Auth\LoginController@logout')->middleware('auth');
+Route::post('login', 'Auth\LoginController@login')->middleware('guest')->name('login');
+Route::post('logout', 'Auth\LoginController@logout')->middleware('auth')->name('logout');
 
-Route::get('register', 'Auth\RegisterController@showRegistrationForm');
-Route::post('register', 'Auth\RegisterController@register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->middleware('guest');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
 
-Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
+Route::get('invite', 'InviteController@edit')->middleware('guest');
+Route::put('invite', 'InviteController@update')->middleware('guest')->name('invite.update');
+Route::post('invite/new', 'InviteController@store')->middleware('admin')->name('invite');
+Route::get('invite/new', 'InviteController@create')->middleware('admin');
+Route::get('invite/{id}', 'InviteController@show')->middleware('admin')->name('invite.show');
+
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm')->name('password.request');
+Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.email');
 Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
