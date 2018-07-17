@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="21px" height="19px" viewBox="0 0 21 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Wireframe-(++)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-366.000000, -573.000000)" fill-rule="nonzero" stroke="#171717">
+            <g id="Group-8" transform="translate(367.000000, 574.000000)">
+                <g id="Group-2">
+                    <path d="M18.9685946,5.06923156 C18.6912502,2.13163719 16.5305942,0.000351639259 13.8265769,0.000351639259 C12.0251168,0.000351639259 10.3756663,0.933250595 9.4475306,2.42842073 C8.52779932,0.913910435 6.94594922,0 5.17335627,0 C2.46970441,0 0.308683045,2.13128555 0.0317039784,5.06887993 C0.00977951409,5.19863481 -0.0801107897,5.88151825 0.193214199,6.99515979 C0.587123742,8.60144793 1.49698901,10.062509 2.82378451,11.2194022 L9.44314571,17 L16.1761487,11.2197539 C17.5029442,10.062509 18.4128095,8.60179957 18.806719,6.99515979 C19.080044,5.88186989 18.9901537,5.19898645 18.9685946,5.06923156 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

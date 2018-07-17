@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('location');
-            $table->date('year');
+            $table->integer('year');
             $table->string('creator');
             $table->timestamps();
 	    

@@ -1,0 +1,22 @@
+.homepage .u-title__baseline {
+    text-align: center;
+}
+.homepage .u-title__baseline span {
+    display: block;
+}
+
+.homepage .u-title__baseline span:first-child {
+    text-indent: 100px;
+}
+
+.homepage__content {
+    margin-top: 50px;
+}
+
+.homepage__content .u-title__homepage {
+    margin-bottom: 10px;
+}
+
+.homepage .u-title__card {
+    color: #777;
+}
