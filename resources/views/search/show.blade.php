@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if($errors)
+    @if(isset($errors))
     <div>
         @foreach($errors as $error)
             <div class="alert alert-warning">
@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    @if($tag)
+    @if(isset($tag))
         @foreach($tag->projects as $project)
             <div>
                 <h1>{{$project->title}}</h1>

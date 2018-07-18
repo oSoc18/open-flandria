@@ -35,6 +35,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
+    public function likes() {
+        return $this->hasMany('App\Like');
+    }
+
     public function authorizeRoles($roles) {
         return $this->hasAnyRole($roles) || abort(401, "This action is unauthorized");
     }

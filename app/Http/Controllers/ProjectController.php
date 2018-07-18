@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Project;
 use App\Image;
 use App\Tag;
+use App\Like;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -142,5 +143,20 @@ class ProjectController extends Controller
     {
         $project->delete();
         return redirect()->route('index');
+    }
+
+    public function like(Project $project) {
+        $user = Auth::user();
+
+        $like = $user->likes->where('project_id', $project->id)->first();
+        if(isset($like)) {
+            $like->delete();
+            return redirect("/projects/$project->id");
+        }
+
+        $like = new Like;
+        $project->likes()->save($like);
+        $user->likes()->save($like);
+        return redirect("/projects/$project->id");
     }
 }

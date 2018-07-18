@@ -20,12 +20,15 @@ Route::get('projects/{project}', 'ProjectController@show');
 Route::get('projects/edit/{project}', 'ProjectController@edit')->middleware('admin');
 Route::put('projects/update/{project}', 'ProjectController@update')->middleware('admin');
 Route::delete('projects/remove/{project}', 'ProjectController@destroy')->middleware('admin');
+Route::post('projects/like/{project}', 'ProjectController@like')->middleware('auth');
 
 Route::get('search', 'SearchController@index')->name('search');
 
-Route::get('user/settings', 'UserController@index')->middleware('auth')->name('users.settings');
-Route::put('user/settings/update', 'UserController@update')->middleware('auth');
-Route::delete('user/settings/remove', 'UserController@destroy')->middleware('auth');
+Route::get('user/gallery', 'UserController@index');
+
+Route::get('user/settings', 'SettingsController@index')->middleware('auth')->name('users.settings');
+Route::put('user/settings/update', 'SettingsController@update')->middleware('auth');
+Route::delete('user/settings/remove', 'SettingsController@destroy')->middleware('auth');
 Route::get('user/verify/{token}', 'Auth\RegisterController@verify')->middleware('guest');
 
 Route::get('upload', 'ProjectController@create')->middleware('auth')->name('upload');
