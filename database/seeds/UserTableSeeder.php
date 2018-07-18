@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
         $user_admin->name = "admin";
         $user_admin->email = "admin@flandria.be";
         $user_admin->password = Hash::make('adminpassword');
+        $user_admin->verified = 1;
         $user_admin->save();
         $user_admin->roles()->attach($role_admin);
     }

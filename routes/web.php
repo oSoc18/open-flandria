@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/settings', 'UserController@index')->middleware('auth')->name('users.settings');
-Route::put('/settings/edit', 'UserController@edit')->middleware('auth');
-Route::delete('/settings/remove', 'UserController@destroy')->middleware('auth');
+Route::get('user/verify/{token}', 'Auth\RegisterController@verify')->middleware('guest');
+Route::get('user/settings', 'UserController@index')->middleware('auth')->name('users.settings');
+Route::put('user/settings/edit', 'UserController@edit')->middleware('auth');
+Route::delete('user/settings/remove', 'UserController@destroy')->middleware('auth');
 
 Route::get('/upload', 'ProjectController@create')->name('upload');
 Route::post('/upload', 'ProjectController@store');

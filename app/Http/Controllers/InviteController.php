@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Invite;
 use Validator;
 use App\User;
 use App\Role;
@@ -9,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\URL;
 
 class InviteController extends Controller
@@ -40,10 +42,7 @@ class InviteController extends Controller
         $user->save();
         $user->roles()->attach(Role::where('name', $request['role'])->first());
 
-        Mail::send('invite.email', [], function($message) {
-            $message->from(config('mail.from.address'), config('mail.from.name'));
-            $message->to($user->email);
-        });
+        Mail::to($user)->send(new Invite($user));
 
         return redirect("/invite/$user->id");
     }
@@ -85,8 +84,8 @@ class InviteController extends Controller
         $password = $validated['password'];
         $c_password = $validated['password_confirmation'];
         $user->password = $password;
-
         $user->invite = null;
+        $user->verified = 1;
         $user->save();
         Auth::login($user);
 
