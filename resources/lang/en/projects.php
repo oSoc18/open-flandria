@@ -8,6 +8,7 @@ return [
     'description' => 'Description',
     'creator' => 'Creator',
     'photographer' => 'Photographer',
+    'more' => "See more",
 ];
 
 ?>

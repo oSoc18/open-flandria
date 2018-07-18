@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\URL;
 
 class InviteController extends Controller
 {
-    public function show($user_id) {
+    public function show(User $user) {
         $secret = config('custom.hmac_secret');
 
-        $user = User::find($user_id);
+        $user_id = $user->id;
         $invite_token = $user->invite;
         $token = URL::to('/invite?token=').$user_id.";".$invite_token.";".hash_hmac('sha256', $user_id.$invite_token, $secret);
         return view('invite.show')->with('token', $token);

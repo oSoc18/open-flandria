@@ -22,7 +22,7 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
 
-        return view('project.index')->with('projects', $projects);
+        return view('projects.index')->with('projects', $projects);
     }
 
     /**
@@ -32,7 +32,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('project.upload');
+        return view('projects.upload');
     }
 
     /**
@@ -93,7 +93,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('project.show')->with('project', $project);
+        return view('projects.show')->with('project', $project);
     }
 
     /**
@@ -103,6 +103,18 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request, Project $project)
+    {
+        return view('projects.update')->with('project', $project);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Projects $projects
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Project $project)
     {
         $validated = $request->validate([
             'title' => 'required',
@@ -121,27 +133,13 @@ class ProjectController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Projects $projects
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $project = Project::find($id);
-        return view('project.update')->with('project', $project);
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Projects $projects
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        $project = Project::find($id);
         $project->delete();
         return redirect()->route('index');
     }

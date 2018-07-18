@@ -14,7 +14,7 @@ class UserController extends Controller
        return view('users.index')->with('user', $user);
     }
 
-    public function edit(Request $request) {
+    public function update(Request $request) {
         $validated = $request->validate([
             'name' => 'required|unique:users',
             'email' => 'required|email'

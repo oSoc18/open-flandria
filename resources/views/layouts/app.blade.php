@@ -31,14 +31,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand" href="{{ url('/project') }}">
-                    {{ config('project.index', 'All Projects') }}
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-
+                <!-- Search Bar -->
+                <form class="navbar-form navbar-right" role="search" action="/search" method="GET">
+                    <div class="form-group">
+                        <input type="text" id='query' name='query' class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
