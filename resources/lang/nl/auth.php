@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -13,10 +12,10 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed'   => 'Deze combinatie van e-mailadres en wachtwoord is niet geldig.',
+    'throttle' => 'Te veel mislukte loginpogingen. Probeer het over :seconds seconden nogmaals.',
 
-    'login' => 'Login',
-    'register' => 'Register',
-    'logout' => 'Logout',
+    'login' => 'Inloggen',
+    'register' => 'Aanmelden',
+    'logout' => 'Uitloggen',
 ];

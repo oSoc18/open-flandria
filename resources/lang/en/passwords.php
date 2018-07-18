@@ -19,4 +19,7 @@ return [
     'token' => 'This password reset token is invalid.',
     'user' => "We can't find a user with that e-mail address.",
 
+    'forgotten' => 'Forgot Your Password?',
+    'rememberme' => 'Remember Me',
+    'login' => 'Login',
 ];
