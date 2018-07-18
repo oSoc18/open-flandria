@@ -23,7 +23,7 @@
 
         <div class="col-sm-5 col-md-3">
           <div class="thumbnail">
-            <img src="<?php echo asset("storage/".$project->images->first()['file'])?>">
+            <!--<img src="<//?php echo asset("storage/".$project->images->first()['file'])?>">-->
             <div class="caption">
               <li>Title: {{$project->title}}</li> 
               <p><li>Location: {{$project->location}}</li></p>
