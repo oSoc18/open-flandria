@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'verify_token'
     ];
 
     /**
@@ -28,6 +28,21 @@ class User extends Authenticatable
     ];
 
     public function projects() {
-	return $this->hasMany('App\Project');
+	    return $this->hasMany('App\Project');
+    }
+
+    public function roles() {
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function authorizeRoles($roles) {
+        return $this->hasAnyRole($roles) || abort(401, "This action is unauthorized");
+    }
+
+    public function hasAnyRole($roles) {
+        if(is_array($roles)) {
+            return $this->roles()->whereIn('name', $roles)->exists();
+        }
+        return $this->roles()->where('name', $roles)->exists();
     }
 }

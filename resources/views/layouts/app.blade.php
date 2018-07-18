@@ -57,6 +57,14 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
+                            @if (Auth::user()->hasAnyRole(['contributor', 'admin']))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('upload') }}">
+                                Upload
+                                </a>
+                            </li>
+                            @endif
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
