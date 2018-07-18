@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\URL;
 
 class InviteController extends Controller
 {
-    public function index() {
-
-    }
-
     public function show($user_id) {
         $secret = config('custom.hmac_secret');
 
@@ -43,6 +39,11 @@ class InviteController extends Controller
 
         $user->save();
         $user->roles()->attach(Role::where('name', $request['role'])->first());
+
+        Mail::send('invite.email', [], function($message) {
+            $message->from(config('mail.from.address'), config('mail.from.name'));
+            $message->to($user->email);
+        });
 
         return redirect("/invite/$user->id");
     }
@@ -85,8 +86,8 @@ class InviteController extends Controller
         $c_password = $validated['password_confirmation'];
         $user->password = $password;
 
+        $user->invite = null;
         $user->save();
-        // remove invite
         Auth::login($user);
 
         return redirect('/');
