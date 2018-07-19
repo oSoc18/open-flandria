@@ -14,3 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('projects', 'API\ProjectController@index');
+Route::get('projects/{id}', 'API\ProjectController@show');
+
+Route::get('images', 'API\ImageController@index');

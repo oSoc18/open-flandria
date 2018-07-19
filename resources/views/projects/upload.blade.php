@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <form method="POST" action="/upload" enctype="multipart/form-data" id="upload">
         @csrf
         <input type="hidden" name="amt-of-images" value="1" id="amt-of-images" />
@@ -13,6 +12,11 @@
         <div class="form-group">
             <label for="location">Location: </label>
             <input id="location" class="form-control" type="text" name="location">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description: </label>
+            <textarea id="description" class="form-control" name="description" cols="30" rows="10"></textarea>
         </div>
 
         <div class="form-group">
@@ -134,7 +138,5 @@
                 addImageSlot();
             });
         }
-
     </script>
-
 @endsection

@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-
-
-
-
 @section('content')
 <form action="/project/edit/{{$project->id}}" method="POST">
     @method('PUT')
