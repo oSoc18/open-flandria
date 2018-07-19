@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Project;
@@ -22,8 +23,27 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+        $likes = Like::where('created_at', '>=', Carbon::today()->subWeek())->get();
 
-        return view('projects.index')->with('projects', $projects);
+        $project_likes = [];
+        foreach($likes as $like) {
+            if(isset($project_likes[$like->project->id])) {
+                $project_likes[$like->project->id] = $project_likes[$like->project->id] + 1;
+            } else {
+                $project_likes[$like->project->id] = 1;
+            }
+        }
+
+        $highest = 0;
+        $highest_project = 0;
+        foreach($project_likes as $project => $likes) {
+            if ($likes > $highest) {
+                $highest = $likes;
+                $highest_project = Project::find($project);
+            } 
+        }
+
+        return view('projects.index')->with('projects', $projects)->with('most_likes_week', $highest_project);
     }
 
     /**

@@ -8,8 +8,8 @@
 
 
  <div class="jumbotron">
-        <h1>Project of the week:</h1>
-        <p><img src="test.jpg"></p>
+        <h1>{{__('projects.mostliked')}}</h1>
+        {{$most_likes_week->title}}
         <p><a class="btn btn-primary btn-lg" href="#" role="button">See the project </a></p>
        
 </div>
