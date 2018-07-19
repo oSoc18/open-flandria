@@ -1,5 +1,6 @@
 .homepage .u-title__baseline {
     text-align: center;
+    margin-top: 40px;
 }
 .homepage .u-title__baseline span {
     display: block;
@@ -9,8 +10,17 @@
     text-indent: 100px;
 }
 
+.homepage .u-title__homepage::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #000;
+    margin: 10px 7.5px 0 0;
+    width: 80px;
+}
+
 .homepage__content {
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 .homepage__content .u-title__homepage {
@@ -19,4 +29,12 @@
 
 .homepage .u-title__card {
     color: #777;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.homepage .tiny__button {
+
 }

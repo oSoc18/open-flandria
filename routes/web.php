@@ -29,3 +29,17 @@ Route::put('/settings/edit', 'UserController@edit')->middleware('auth');
 Route::delete('/settings/remove', 'UserController@destroy')->middleware('auth');
 
 Auth::routes();
+
+
+
+Route::get('about', function() {
+    return view('about');
+});
+
+Route::get('gallery', function() {
+    return view('gallery');
+});
+
+Route::get('sign', function() {
+    return view('sign');
+});

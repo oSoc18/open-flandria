@@ -5,50 +5,54 @@
 
 @section('content')
 
-    <section class="show">
+    <section class="show show__content">
         <div class="row">
-            <div class="col-lg-6 col-sm-6">
+            <div class="col-lg-8">
                 <figure class="show__img">
-                    <img src="" alt="">
+                    <img src="<?= asset("img/pic_02.jpg") ?>" class="img-fluid" alt="Responsive image">
                 </figure>
                 <div class="show__panel">
-                    <ul>
-                        <li>
+                    <ul class="row show__panel__buttons">
+                        <li class="show__panel__item col-lg-2">
                             <button class="tiny__button like">
-                                Like
+                                <span>Like</span>
+                                <?php include ("img/SVG/like.php") ?>
                             </button>
                         </li>
-                        <li>
+                        <li class="show__panel__item col-lg-2">
                             <button class="tiny__button bookmark">
-                                Bookmark
+                                <span>Bookmark</span>
+                                <?php include ("img/SVG/bookmark.php") ?>
                             </button>
                         </li>
-                        <li>
+                        <li class="show__panel__item col-lg-2">
                             <button class="tiny__button download">
-                                Download
+                                <span>Download</span>
+                                <?php include ("img/SVG/download.php") ?>
                             </button>
                         </li>
-                        <li>
+                        <li class="show__panel__item col-lg-2">
                             <button class="tiny__button share">
-                                Share
+                                <span>Share</span>
+                                <?php include ("img/SVG/share.php") ?>
                             </button>
                         </li>
-                        <li>
+                        <li class="show__panel__item col-lg-4 text-right">
                             License : <span>Unknown</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 col-sm-6">
-                <h1 class="u-title type-1 u-title__show">
+            <div class="col-lg-4">
+                <h1 class="show__title u-title type-2">
                     {{$project->title}}
                     @if($project->year) ({{$project->year}}) @endif
 
                 </h1>
-                <span class="u-title type-2 u-title__category">Bridge</span>
-                <span class="u-title type-2 u-title__location">Antwerp</span>
-                <div class="show__desc">
-                    <h1 class="u-title type-3">
+                <span class="u-title type-4 u-uppercase bold u-title__category">Bridge</span>
+                <span class="u-title type-4 u-uppercase bold u-title__location">Antwerp</span>
+                <div class="show__section show__desc">
+                    <h1 class="show__subtitle u-title type-4">
                         Description
                     </h1>
                     <p>
@@ -57,17 +61,17 @@
                         The bridge is 67 meters long.
                     </p>
                 </div>
-                <div class="show__creators">
+                <div class="show__section show__creators">
                     <ul>
                         <li>
-                            <h1>Architect</h1>
+                            <h1 class="show__subtitle u-title type-4">Architect</h1>
                             <div class="show__creators__profile">
                                 <img src="" alt="">
                                 <span>Ney & Patners</span>
                             </div>
                         </li>
                         <li>
-                            <h1>Photographer</h1>
+                            <h1 class="show__subtitle u-title type-4">Photographer</h1>
                             <div class="show__creators__profile">
                                 <img src="" alt="">
                                 <span>Bart Gosselin</span>
@@ -75,16 +79,17 @@
                         </li>
                     </ul>
                 </div>
-                <div class="show__keywords">
+                <div class="show__section show__keywords">
+                    <h1 class="show__subtitle u-title type-4">Keywords</h1>
                     <ul>
-                        <li>
+                        <li class="show__keywords__item u-uppercase">
                             <a href="#">#Eco</a>
                         </li>
-                        <li>
-                            <a href="#">Serenity</a>
+                        <li class="show__keywords__item u-uppercase">
+                            <a href="#">#Serenity</a>
                         </li>
-                        <li>
-                            <a href="#">Green</a>
+                        <li class="show__keywords__item u-uppercase">
+                            <a href="#">#Green</a>
                         </li>
                     </ul>
                 </div>

@@ -1,0 +1,51 @@
+.about {
+    margin-bottom: 50px;
+}
+
+.about .title__about {
+    margin-top: 50px;
+}
+
+.about .about__features {
+    margin-top: 50px;
+}
+
+.about .about__item:first-child {
+    padding: 0 5% 0 15px;
+}
+.about .about__item:nth-child(2) {
+    padding: 0 5% 0 5%;
+}
+.about .about__item:last-child {
+    padding: 0 0 0 5%;
+}
+
+.about .about__item li {
+    display: block;
+}
+
+.about .about__item {
+    width: 80%;
+}
+
+.about .about__subitem {
+    margin: auto;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+
+.about .about__item::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 75px;
+    width: 1px;
+    top: 0;
+    right: 0;
+    background: #cccccc;
+}
+
+.about .about__item:last-child::after {
+    display: none;
+}
