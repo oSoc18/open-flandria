@@ -9,9 +9,10 @@
 
 @include('layouts.gallery')
 <ul>
+    @foreach($projects as $project)
 
-        <li>{{$gallery->name}}</li> 
-
+        <li>{{$project}}</li> 
+    @endforeach
 </ul>
 
 

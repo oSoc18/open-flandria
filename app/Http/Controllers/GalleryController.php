@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Gallery;
+use App\Project;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -19,6 +20,28 @@ class GalleryController extends Controller
         $galleries = Gallery::all()->where('user_id',$user_id);
 
         return view('gallery.manageAllGalleries')->with('galleries', $galleries);
+    }
+    public function addProjectToGallery(Request $request, $id){
+        
+        $gallery = Gallery::where('name', $request['name'])->first();
+
+        $project = Project::where('id', $id)->first();
+
+        $exist = $gallery->projects->contains($project->id);
+
+        if(!$exist){
+            $project->gallery()->save($gallery);
+        }   
+
+        $user_id = Auth::user()->id;
+
+        $gallery = Gallery::find($id);
+        $galleries = Gallery::all()->where('user_id',$user_id);
+
+        return view('gallery.show')->with('gallery', $gallery)->with('galleries',$galleries);
+
+
+            
     }
 
     /**
@@ -68,7 +91,9 @@ class GalleryController extends Controller
         $gallery = Gallery::find($id);
         $galleries = Gallery::all()->where('user_id',$user_id);
 
-        return view('gallery.show')->with('gallery', $gallery)->with('galleries',$galleries);
+        $projects = $gallery->projects;
+
+        return view('gallery.show')->with('gallery', $gallery)->with('galleries',$galleries)->with('projects', $projects);
     }
 
     /**

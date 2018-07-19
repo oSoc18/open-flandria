@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Project;
+use App\Gallery;
 use App\Image;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -95,7 +96,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('project.show')->with('project', $project);
+        $user_id = Auth::user()->id;
+        $galleries = Gallery::where('user_id', $user_id)->get();
+        return view('project.show')->with('project', $project)->with('galleries',$galleries);
     }
 
     /**

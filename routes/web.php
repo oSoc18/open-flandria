@@ -30,6 +30,7 @@ Route::put('galleries/add', 'GalleryController@store')->middleware('auth');
 Route::put('/gallery/update/{gallery}', 'GalleryController@edit')->middleware('auth');
 Route::get('/galleries/manage' , 'GalleryController@manageAllGalleries')->middleware('auth');
 
+Route::put('/galleries/addproject/{id}' , 'GalleryController@addProjectToGallery')->middleware('auth');
 
 
 Route::get('/upload', 'ProjectController@create')->middleware('auth');
