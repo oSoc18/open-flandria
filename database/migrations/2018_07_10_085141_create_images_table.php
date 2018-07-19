@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('file');
             $table->string('credit');
-            $table->string('copyright');
+            $table->string('license');
             $table->integer('year');
             $table->timestamps();
 
