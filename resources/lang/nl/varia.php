@@ -5,7 +5,8 @@ return [
     'settings' => 'Instellingen',
     'about' => 'Over ons',
     'contact' => 'Contact',
-    'slogan' => 'Een inspiratiebron voor duurzaam leven en wonen in Vlaanderen',
+    'slogan1' => 'Een inspiratiebron voor',
+    'slogan2' => 'duurzaam leven en wonen',
     'required' => 'verplicht',
 ];
 

@@ -1,0 +1,59 @@
+.show__content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.show__panel {
+    width: 100%;
+}
+
+.show__panel__item {
+    float: left;
+}
+
+.show .u-title__category {
+    margin-top: 30px;
+    color: #777;
+    float: left;
+}
+
+.show .u-title__location {
+    margin-top: 30px;
+    color: #777;
+    float: right;
+}
+
+.show__subtitle {
+    font-weight: 600;
+}
+
+.show__desc p {
+    font-weight: 300;
+}
+
+.show__section {
+    clear: both;
+    padding-top: 40px;
+    display: block;
+}
+
+.show__creators ul li {
+    float: left;
+}
+
+.show__creators ul li:first-child {
+    margin-right: 20px;
+}
+
+.show__keywords {
+    display: inline-block;
+}
+
+.show__keywords__item {
+    float: left;
+    margin-right: 20px;
+}
+
+.show path {
+    stroke: #000;
+}

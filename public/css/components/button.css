@@ -1,0 +1,31 @@
+.c-button {
+    padding: 8px 35px;
+    background: #F8E71C;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.tiny__button {
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+.tiny__button span {
+    display: none;
+}
+
+.tiny__button img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.tiny__button path {
+    stroke: yellow;
+}

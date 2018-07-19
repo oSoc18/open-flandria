@@ -4,6 +4,7 @@
 
     <form method="POST" action="/upload" enctype="multipart/form-data" id="upload">
         @csrf
+
         <input type="hidden" name="amt-of-images" value="1" id="amt-of-images" />
         <div class="form-group">
             <label for="title">Title: </label>

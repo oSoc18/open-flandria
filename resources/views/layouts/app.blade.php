@@ -13,68 +13,72 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    {{--<script src="{{ asset('js/sign-form.js') }}" defer></script>--}}
+    {{--<script src="{{ asset('js/upload-form.js') }}" defer></script>--}}
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/base.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/partials/header.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/partials/footer.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/utilities/title.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/components/card.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/components/button.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/homepage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/gallery.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/show.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/about.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/sign.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Search Bar -->
-                <form class="navbar-form navbar-right" role="search" action="/search" method="GET">
-                    <div class="form-group">
-                        <input type="text" id='query' name='query' class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-default">Search</button>
-                </form>
-                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+<div id="app">
+    <div class="header">
+    <div class="header__logo">
+            <a class="" href="{{ url('/') }}">
+                <img src="<?= asset("img/logo_openflandria.svg") ?>" alt="">
+            </a>
+        </div>
+        <nav class="navbar navbar-expand-md header__nav">
+            <ul class="header__menu-horizontal">
+                <li class="header__center">
+                    <form class="header__search" action="{{route('search')}}" method="GET">
+                        <input type="search" placeholder="Search the bulding, location, materials…"/>
+                        <input type="submit" value="" />
+                    </form>
+                </li>
+                <li class="header__right">
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul>
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('auth.login') }}</a>
+                            <li class="header__sign">
+                                <a class="" href="{{ route('login') }}">{{ __('auth.login').'/'.__('auth.register') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('auth.register') }}</a>
+                            <li class="header__bar">
+                                <span></span>
+                            </li>
+                            <li class="header__lang">
+                                <ul>
+                                    <li>
+                                        <a class="header__lang--en" href="#">en</a>
+                                    </li>
+                                    <li>
+                                        <a class="header__lang--nl" href="#">nl</a>
+                                    </li>
+                                </ul>
                             </li>
                         @else
-                            @if (Auth::user()->hasAnyRole(['contributor', 'admin']))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('upload') }}">
-                                {{ __('varia.upload') }}
-                                </a>
-                            </li>
-                            @endif
-                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{route('users.settings')}}">{{ __('varia.settings') }}</a>
+                                    <a class="dropdown-item" href="{{route('users.settings')}}">{{__('varia.settings')}}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -88,13 +92,50 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
-            </div>
+                </li>
+            </ul>
+            <ul class="header__menu-vertical">
+                <li>
+                    <a class="nav-link" href="{{ url('/about') }}">
+                        about
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url('/contact') }}">
+                        contact
+                    </a>
+                </li>
+            </ul>
         </nav>
-
-        <main class="py-4 container">
-            @yield('content')
-        </main>
     </div>
+    <main class="py-4 container">
+        @yield('content')
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <ul class="row">
+                <li class="col-lg-3 col-sm-6">
+                    <h1 class="footer__title">About open flandria</h1>
+                    <a class="footer__item" href="#">What is Open Flandria? </a>
+                    <a class="footer__item" href="">Contact</a>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <h1 class="footer__title">Other</h1>
+                    <a class="footer__item" href="#">Cookies, Terms & Privacy</a>
+                    <a class="footer__item" href="">FAQ</a>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <h1 class="footer__title">Contact</h1>
+                    <a class="footer__item" href="#">info@openflandria.be</a>
+                    <a class="footer__item" href="#">+32 458 114 623</a>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <h1 class="footer__title partners">In association with</h1>
+                    <img src="<?= asset("img/Logo_Vlaanderen.svg") ?>" alt="">
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
 </body>
 </html>

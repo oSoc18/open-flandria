@@ -1,0 +1,170 @@
+.c-card {
+    width: 100%;
+    height: 55vh;
+    -webkit-box-shadow: 10px 6px 30px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 10px 6px 30px 0px rgba(0,0,0,0.15);
+    box-shadow: 10px 6px 30px 0px rgba(0,0,0,0.15);
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-card__details {
+    transition: .4s all;
+}
+
+.c-card__img img {
+    width: 100%;
+}
+
+.c-card__img:hover > .c-card__details {
+    bottom: 0;
+}
+
+.c-card__details {
+    background: #FFF;
+    padding: 5px 15px;
+    position: absolute;
+    bottom: -65px;
+    width: 100%;
+}
+
+.c-card__details__creators div {
+    float: left;
+}
+
+.c-card__details__creators div span {
+    display: block;
+    margin-left: 10px;
+}
+
+.c-card__details__creators div span:first-child {
+    font-size: 12px;
+}
+
+.c-card__details__creators div span:last-child {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.c-card__details__creators figure {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    background: red;
+    border-radius: 40px;
+    position: relative;
+    float: left;
+}
+
+.c-card__details__creators figure img {
+    height: 100%;
+    width: auto;
+    left: -50%;
+    position: absolute;
+}
+
+.c-card__details ul {
+    position: absolute;
+    top: -50px;
+    right: 0;
+}
+
+.c-card__details ul li {
+    position: relative;
+    display: inline;
+}
+
+.c-card__details ul li:nth-child(1) button span, .c-card__details ul li:nth-child(2) button span {
+    display: none;
+}
+
+.c-card__details__creators {
+    float: right;
+}
+
+
+/******************** Tiny ************************/
+
+.c-card.tiny {
+    height: 25vh;
+}
+
+.c-card.tiny .u-title__card {
+    font-size: 10px;
+    margin-top: -5px;
+}
+
+
+.c-card.tiny .c-card__details {
+    padding: 0 15px;
+}
+.c-card.tiny .c-card__details__creators {
+    margin-top: 18px;
+}
+
+.c-card.tiny .c-card__details__creators figure {
+    height: 18px;
+    width: 18px;
+}
+
+.c-card.tiny .c-card__details__creators div span:first-child {
+    display: none;
+}
+
+.c-card.tiny .c-card__details__creators div span:last-child{
+    font-size: 10px;
+}
+
+/******************** Secondary ************************/
+.c-card.secondary {
+    padding: 10px;
+    height: 30vh;
+}
+
+.c-card.secondary .u-title__card {
+    margin-top: 7.5px;
+    font-size: 18px;
+}
+
+.c-card.secondary .c-card__details {
+    background: rgba(255,255,255,.8);
+    padding: 5px 15px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    opacity: 0;
+}
+
+.c-card.secondary .c-card__img:hover > .c-card__details {
+    opacity: 1;
+}
+
+.c-card.secondary .c-card__details__creators div span:last-child {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.c-card.secondary .c-card__details__creators figure {
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+}
+
+
+.c-card.secondary .c-card__details ul li {
+    position: relative;
+    display: inline;
+}
+
+.c-card.secondary .c-card__details ul li:nth-child(1) button span, .c-card.secondary .c-card__details ul li:nth-child(2) button span {
+    display: none;
+}
+
+.c-card.secondary .c-card__details__creators {
+    bottom: 0;
+    position: absolute;
+}

@@ -19,4 +19,6 @@ return [
     'login' => 'Login',
     'register' => 'Register',
     'logout' => 'Logout',
+
+    'nomember' => 'Not a member ? Sign up',
 ];

@@ -18,4 +18,6 @@ return [
     'login' => 'Inloggen',
     'register' => 'Aanmelden',
     'logout' => 'Uitloggen',
+
+    'nomember' => 'Nog geen lid? Maak een account.',
 ];

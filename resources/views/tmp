@@ -1,0 +1,33 @@
+<div class="col-lg-6 col-md-6">
+    <div class="c-card tiny">
+        <div class="c-card__img">
+            <img src="<?= asset("storage/" . $project->images->first()['file']) ?>" class="img-fluid" alt="Responsive image">
+            <div class="c-card__details">
+                <h1 class="u-title type-3 u-title__card">{{$project->title}}</h1>
+                <ul>
+                    <li>
+                        <button class="c-card__button tiny__button like">
+                            <span>Like</span>
+                            <?php include("img/SVG/like.php") ?>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="c-card__button tiny__button bookmark">
+                            <span>Bookmarked</span>
+                            <?php include("img/SVG/bookmark.php") ?>
+                        </button>
+                    </li>
+                </ul>
+                <div class="c-card__details__creators">
+                    <figure>
+                        <img src="<?= asset("img/author_1.jpg") ?>" alt="">
+                    </figure>
+                    <div>
+                        <span>{{__('projects.photographer')}}</span>
+                        <span>{{$user->name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,34 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        @if (session('warning'))
-                            <div class="alert alert-warning">
-                                {{session('warning')}}
-                            </div>
-                        @endif
+    <section class="sign-in">
+        <div class="container">
+            <img src="" alt=""/>
+            <h1 class="u-title type-1 sign-in__title">{{__('auth.login')}}</h1>
+            {{--<span>--}}
+            {{--If you want to upload something on the Open Flandria, you need to connect or to create an account--}}
+            {{--</span>--}}
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
                         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email"
-                                       class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                                <div class="col-md-6">
+                                <div class="col-lg-12 col-md-12">
                                     <input id="email" type="email"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" required autofocus>
+                                           class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="email" value="{{ old('email') }}"
+                                           placeholder="{{__('forms.email')}}" required autofocus>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -39,11 +30,9 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
+                                <div class="col-lg-12 col-md-12">
+                                    <input id="password" type="password" placeholder="{{__('forms.password')}}"
                                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                            name="password" required>
 
@@ -63,24 +52,26 @@
                                                    name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('passwords.rememberme') }}
                                         </label>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('passwords.login') }}
-                                    </button>
-
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('passwords.forgotten') }}
                                     </a>
                                 </div>
                             </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-default">
+                                        {{ __('auth.login') }}
+                                    </button>
+                                </div>
+                            </div>
+                            <a href="#">{{__('auth.nomember')}}</a>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+{{--    <script src="{{ asset('js/sign-form.js') }}" defer></script>--}}
 @endsection

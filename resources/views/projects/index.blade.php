@@ -17,10 +17,6 @@
 
 <div class="row">
 @foreach ($projects as $project)
-
-
-
-
         <div class="col-sm-5 col-md-3">
           <div class="thumbnail">
             <img src="<?php echo asset("storage/".$project->images->first()['file'])?>">
@@ -33,9 +29,6 @@
             </div>
           </div>
         </div>
-     
-
-
 @endforeach   
 </div>
 

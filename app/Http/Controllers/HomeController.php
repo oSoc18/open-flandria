@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Project;
+use App\Like;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +16,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $random_projects = Project::inRandomOrder()->take(4)->get();
+
+        $all_projects = Project::withCount('likes')->get();
+
+        $highest_amt_likes = 0;
+        $highest_project = Project::first();
+        foreach($all_projects as $project) {
+            if($project->likes_count > $highest_amt_likes) {
+                $highest_amt_likes = $project->likes_count;
+                $highest_project = $project;
+            }
+        }
+
+        return view('index')->with('random_projects', $random_projects)->with('most_likes_week', $highest_project);
     }
 }

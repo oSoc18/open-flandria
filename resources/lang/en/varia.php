@@ -5,7 +5,8 @@ return [
     'settings' => 'Settings',
     'about' => 'About',
     'contact' => 'Contact',
-    'slogan' => 'A visual inspiration for sustainable living',
+    'slogan1' => 'A visual inspiration',
+    'slogan2' => 'for sustainable living',
     'required' => 'required',
 ];
 

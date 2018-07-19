@@ -9,6 +9,7 @@ return [
     'creator' => 'Maker',
     'photographer' => 'Fotograaf',
     'more' => 'Zie meer',
+    'keywords' => 'Sleutelwoorden',
 ];
 
 ?>

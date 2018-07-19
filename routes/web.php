@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('projects', 'ProjectController@index');
 Route::get('projects/{project}', 'ProjectController@show');
@@ -51,3 +49,16 @@ Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetFor
 Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.email');
 Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+
+
+Route::get('about', function() {
+    return view('about');
+});
+
+Route::get('gallery', function() {
+    return view('gallery');
+});
+
+Route::get('sign', function() {
+    return view('sign');
+});
