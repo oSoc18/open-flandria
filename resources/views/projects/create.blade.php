@@ -96,13 +96,13 @@
             creditGroup.appendChild(credit);
 
             copyrightLabel = document.createElement('label');
-            copyrightLabel.for = `${identifier}-copyright`;
-            copyrightLabel.innerHTML = `Copyright image ${counter}: `;
+            copyrightLabel.for = `${identifier}-license`;
+            copyrightLabel.innerHTML = `License image ${counter}: `;
 
             copyright = document.createElement('input');
             copyright.type = "text";
-            copyright.name = `${identifier}-copyright`;
-            copyright.id = `${identifier}-copyright`;
+            copyright.name = `${identifier}-license`;
+            copyright.id = `${identifier}-license`;
             copyright.className = "form-control";
 
             copyrightGroup = document.createElement('div');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Project;
@@ -23,7 +24,12 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
 
-        return view('projects.index')->with('projects', $projects);
+        $projectsWithLikes = Project::with(['likes' => function($query){
+            $query->where('created_at', '>=', Carbon::today()->subWeek());
+        }])->withCount('likes')->get();
+
+        $project = $projectsWithLikes->where('likes_count', $projectsWithLikes->max('likes_count'))->first();
+        return view('projects.index')->with('projects', $projects)->with('most_likes_week', $project);
     }
 
     /**
@@ -79,7 +85,7 @@ class ProjectController extends Controller
 
                 $image->file = "storage/".$path;
                 $image->credit = $request[$identifier.'-credit'];
-                $image->copyright = $request[$identifier.'-copyright'];
+                $image->license = $request[$identifier.'-license'];
                 $image->year = $request[$identifier.'-year'];
                 $image->project_id = $project->id;
                 $image->downloads = 0;
