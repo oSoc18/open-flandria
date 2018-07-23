@@ -17,6 +17,11 @@
         </div>
 
         <div class="form-group">
+            <label for="description">Description: </label>
+            <textarea id="description" name="description" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group">
             <label for="year">Year: </label>
             <input id="year" class="form-control" type="number" min="1900" max="2099" step="1" value="2018" name="year">
         </div>
@@ -135,7 +140,6 @@
                 addImageSlot();
             });
         }
-
     </script>
 
 @endsection

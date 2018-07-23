@@ -50,6 +50,7 @@ Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
 
+Route::post('image/{$image}/download', 'ImageController@download')->name('download');
 
 Route::get('about', function() {
     return view('about');

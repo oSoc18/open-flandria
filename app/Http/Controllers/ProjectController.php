@@ -47,6 +47,7 @@ class ProjectController extends Controller
         $project = new Project;
         $project->title = $request['title'];
         $project->location = $request['location'];
+        $project->description = $request['description'];
         $project->year = $request['year'];
         $project->creator = $request['creator'];
         $project->user_id = Auth::user()->id;
@@ -76,9 +77,9 @@ class ProjectController extends Controller
                 $prefix = "public/";
                 $path = substr($path, strlen($prefix));
 
-                $image->file = $path;
+                $image->file = "storage/" . $path;
                 $image->credit = $request[$identifier.'-credit'];
-                $image->copyright = $request[$identifier.'-copyright'];
+                $image->license = $request[$identifier.'-copyright'];
                 $image->year = $request[$identifier.'-year'];
                 $image->project_id = $project->id;
                 $image->save();

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <figure class="show__img">
-                    <img src="<?= asset("storage/" . $project->images->first()['file']) ?>" class="img-fluid" alt="Responsive image">
+                    <img src="<?= asset($project->images->first()['file']) ?>" class="img-fluid" alt="Responsive image">
                 </figure>
                 <div class="show__panel">
                     <ul class="row show__panel__buttons">
@@ -22,10 +22,15 @@
                             </button>
                         </li>
                         <li class="show__panel__item col-lg-2">
+                            <a href="#" class="dropdown-item" id="download-button">
+                            <form method="POST" id="download-form" action="/image/{{$project->images->first()['id']}}/download" style="display: none;">
+                                @csrf
+                            </form>
                             <button class="tiny__button download">
                                 <span>Download</span>
                                 <?php include ("img/SVG/download.php") ?>
                             </button>
+                            </a>    
                         </li>
                         <li class="show__panel__item col-lg-2">
                             <button class="tiny__button share">
@@ -85,5 +90,22 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', init, false);
+
+        function init() {
+            document.getElementById('download-button').addEventListener('click', function(ev) {
+                ev.preventDefault();
+                document.getElementById('download-form').submit();
+            });
+
+            document.getElementById('download-form').addEventListener('submit', function(ev) {
+                ev.preventDefault();
+                return false;
+            });
+            
+        }
+    </script>
 @endsection
 
