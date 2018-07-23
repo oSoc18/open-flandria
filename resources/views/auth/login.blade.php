@@ -5,15 +5,21 @@
         <div class="container">
             <img src="" alt=""/>
             <h1 class="u-title type-1 sign-in__title">{{__('auth.login')}}</h1>
-            {{--<span>--}}
-            {{--If you want to upload something on the Open Flandria, you need to connect or to create an account--}}
-            {{--</span>--}}
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
                         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                             @csrf
-
+                             @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        @if (session('warning'))
+                            <div class="alert alert-warning">
+                                {{session('warning')}}
+                            </div>
+                        @endif
                             <div class="form-group row">
                                 <div class="col-lg-12 col-md-12">
                                     <input id="email" type="email"
