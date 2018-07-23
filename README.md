@@ -18,17 +18,17 @@ To launch the project you need php 7.2.7, MySQL and a server manager (XAMP, WAMP
 
 ## Database Conception
 
-The main table is porjects. Here are the tables of the database: (the foreign keys are underlined)
+The main table is porjects. Here are the tables of the database:
 
--projects (id,title,location,year,creator,created_at,update_at,<span>user_id</span>)
--users (id,name,email,password,remember_token,created_at,update_at)
--project_tag(id,<span>project_id</span>,<span> tag_id</span>)
--tags(id,name,created_at,updated_at)
--galleries(id,name,created_at,updated_at,<span>user_id</span>
--gallery_project(id,<span>gallery_id</span>,<span>project_id</span>
--images(id,file,credit,copyright,year,created_at,updated_at,<span>project_id</span>
--migration(id,migration,batch)
--password_resets(email,token,created_at)
+-projects (id,title,location,year,creator,created_at,update_at,<span>user_id</span>)<br>
+-users (id,name,email,password,remember_token,created_at,update_at)<br>
+-project_tag(id,<span>project_id</span>,<span> tag_id</span>)<br>
+-tags(id,name,created_at,updated_at)<br>
+-galleries(id,name,created_at,updated_at,<span>user_id</span><br>
+-gallery_project(id,<span>gallery_id</span>,<span>project_id</span><br>
+-images(id,file,credit,copyright,year,created_at,updated_at,<span>project_id</span><br>
+-migration(id,migration,batch)<br>
+-password_resets(email,token,created_at)<br>
 
 
 ### Break down into end to end tests
