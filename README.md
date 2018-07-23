@@ -44,6 +44,8 @@ The main table is projects. Here are the tables of the database:
 With Laravel, the files are very structured. There are controllers, views, and models for every main table.
 In the controllers, there are methods which allow to get data from the database. These controllers can send variable, object and collection to the view. The view can use these data thanks to php in the code. For example:
 
+<h3>Pass data from the controller to the view</h3>
+
 app/Http/Controllers/ProjectController.php
 ```
 //a function which will return all the projects of the database
@@ -53,6 +55,7 @@ public function index()
 
         return view('project.index')->with('projects', $projects);
     }
+ // the 'project.index' is the index view in the view/project folder   
 //in the "->with" we can send the collection of project we retrieve from the database.    
 
 ```
@@ -73,8 +76,9 @@ ressources/views/project/index.blade.php
 </body>
 
 ```
-<h2>Test</h2>
-<h3>Test</h3>
+<h3>Models and relation between table</h3>
+
+Thanks to Eloquent, Laravel allows the user to create very simple relations between the table to get the data. For example, in our database we have a relation between <u>projects</u> and <u>tags</u>. 
 
 
 
