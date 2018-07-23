@@ -31,8 +31,8 @@ Route::put('user/settings/update', 'SettingsController@update')->middleware('aut
 Route::delete('user/settings/remove', 'SettingsController@destroy')->middleware('auth');
 Route::get('user/verify/{token}', 'Auth\RegisterController@verify')->middleware('guest');
 
-Route::get('upload', 'ProjectController@create')->middleware('auth')->name('upload');
-Route::post('upload', 'ProjectController@store')->middleware('auth');
+Route::get('upload', 'ProjectController@create')->middleware('auth')->name('upload')->middleware('contrib');
+Route::post('upload', 'ProjectController@store')->middleware('auth')->middleware('contrib');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->middleware('guest');
 Route::post('login', 'Auth\LoginController@login')->middleware('guest')->name('login');
