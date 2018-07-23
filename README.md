@@ -157,7 +157,18 @@ We have used the authentication which is provided by Laravel, to see more about 
 
 To create the search bar we have used a simple database search. When the user tap a word in the search bar, the controller goes to the database and then see if there is a tag, project title or a description which matches to the search word. We haven't get the time to develop a more efficient way for the search bar. We have thinked about an elastic search. 
 
-## Authors
+<h3>Gallery</h3>
+
+The gallery is a sort of album in which the user can store the picture he/she saw on the website. The user can also choose in which gallery he/she wants to store these picture. User can create new gallery, delete or change the name of an existing one.
+
+There is a layout which is present in every gallery page. Here you can retrieve this layout: ressources/views/layouts/gallery.blade.php.
+There is a page in which user can change the name of the gallery. In the tab of every gallery, user can also modify and delete the gallery.
+
+A gallery belongs to an user, an user can have many gallery. Gallery can have a lot of project, and project can belong to many gallery. 
+
+<h3></h3>
+
+## Authors and contributors
 
 <h3>Author</h3>
 * **Mohanad ABOU ZAIDI**
@@ -175,15 +186,5 @@ Project Manager -https://github.com/gwenfranck<br>
 * **Mohanad*<br>
 - Back-end developer -https://github.com/mohanadabouzaidi
 <br>
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
 
