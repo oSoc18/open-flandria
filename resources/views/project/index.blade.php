@@ -7,7 +7,7 @@
 <h1>All projects: </h1>
 
 
- <div class="jumbotron">
+ <div>
         <h1>Project of the week:</h1>
         <p><img src="test.jpg"></p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">See the project </a></p>

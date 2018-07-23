@@ -177,9 +177,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
+    <script src="{{ asset('js/interact-button.js') }}" defer></script>
 @endsection

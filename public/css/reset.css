@@ -10,4 +10,10 @@ li {
 button {
     background: none;
     border: none;
+    outline: none;
+}
+
+button:active {
+    outline: none;
+    border: none;
 }
