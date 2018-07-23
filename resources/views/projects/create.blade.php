@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <form method="POST" action="/upload" enctype="multipart/form-data" id="upload">
         @csrf
 
@@ -18,7 +17,7 @@
 
         <div class="form-group">
             <label for="description">Description: </label>
-            <textarea id="description" name="description" cols="30" rows="10"></textarea>
+            <textarea id="description" class="form-control" name="description" cols="30" rows="10"></textarea>
         </div>
 
         <div class="form-group">
@@ -141,5 +140,4 @@
             });
         }
     </script>
-
 @endsection

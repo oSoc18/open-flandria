@@ -77,10 +77,10 @@ class ProjectController extends Controller
                 $prefix = "public/";
                 $path = substr($path, strlen($prefix));
 
-                $image->file = "storage/" . $path;
-                $image->credit = $request[$identifier . '-credit'];
-                $image->license = $request[$identifier . '-copyright'];
-                $image->year = $request[$identifier . '-year'];
+                $image->file = "storage/".$path;
+                $image->credit = $request[$identifier.'-credit'];
+                $image->copyright = $request[$identifier.'-copyright'];
+                $image->year = $request[$identifier.'-year'];
                 $image->project_id = $project->id;
                 $image->downloads = 0;
                 $image->save();

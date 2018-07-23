@@ -12,3 +12,8 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('projects', 'API\ProjectController@index');
+Route::get('projects/{id}', 'API\ProjectController@show');
+
+Route::get('images', 'API\ImageController@index');
