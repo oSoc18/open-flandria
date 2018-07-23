@@ -40,8 +40,12 @@ Route::get('gallery', function() {
     return view('gallery');
 });
 
-Route::get('sign', function() {
-    return view('sign');
+Route::get('signin', function() {
+    return view('signin');
+});
+
+Route::get('signup', function() {
+    return view('signup');
 });
 
 Route::get('up', function() {

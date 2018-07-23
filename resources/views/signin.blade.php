@@ -31,8 +31,7 @@
                         <p>Use your email address and account password in order to sign in</p>
                     </div>
                     <div class="sign__img__btn">
-                        <span class="m--up">Sign Up</span>
-                        <span class="m--in">Sign In</span>
+                        <a class="m--up" href="{{ url('/signup') }}">Sign Up</a>
                     </div>
                 </div>
                 <div class="sign__form submit__sign-up">
@@ -49,7 +48,7 @@
                         <span>Password</span>
                         <input class="sign__input" type="password"/>
                     </label>
-                    <button type="button" class="c-button sign__connect">Sign Up</button>
+                    <a class="c-button sign__connect">Sign Up</a>
                 </div>
             </div>
         </div>

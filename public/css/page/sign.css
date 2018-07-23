@@ -31,9 +31,6 @@
     position: relative;
     width: 640px;
     height: 100%;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
     padding: 50px 30px 0;
 }
 
@@ -46,9 +43,6 @@
     height: 100%;
     padding-left: 260px;
     background: #fff;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 .sign__field.s--signup .sign__subfield {
     -webkit-transform: translate3d(-640px, 0, 0);
@@ -85,9 +79,6 @@
     height: 100%;
     background-image: url("../../img/background-form.jpg");
     background-size: cover;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 .sign__img:after {
     content: '';
@@ -111,9 +102,6 @@
     padding: 0 20px;
     text-align: center;
     color: #fff;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 .sign__img__text h2 {
     margin-bottom: 10px;
@@ -127,6 +115,21 @@
     -webkit-transform: translateX(520px);
     transform: translateX(520px);
 }
+
+.sign__img__btn .m--up {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    color: #FFF;
+    text-align: center;
+    line-height: 30px;
+}
+
 .sign__img__text.m--in {
     -webkit-transform: translateX(-520px);
     transform: translateX(-520px);
@@ -134,6 +137,7 @@
 .sign__field.s--signup .sign__img__text.m--in {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+    z-index: 1000;
 }
 .sign__img__btn {
     overflow: hidden;
@@ -148,17 +152,6 @@
     font-size: 15px;
     cursor: pointer;
 }
-.sign__img__btn:after {
-    content: '';
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #fff;
-    border-radius: 30px;
-}
 .sign__img__btn span {
     position: absolute;
     left: 0;
@@ -168,9 +161,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    transition: -webkit-transform 1.2s;
-    transition: transform 1.2s;
-    transition: transform 1.2s, -webkit-transform 1.2s;
 }
 .sign__img__btn span.m--in {
     -webkit-transform: translateY(-72px);
@@ -235,8 +225,6 @@
     transition-timing-function: ease-out;
 }
 .sign__field.s--signup .submit__sign-in {
-    transition-timing-function: ease-in-out;
-    transition-duration: 1.2s;
     -webkit-transform: translate3d(640px, 0, 0);
     transform: translate3d(640px, 0, 0);
 }
