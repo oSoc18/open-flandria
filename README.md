@@ -20,7 +20,7 @@ Be sure to have this version of php.
 
 The main table is projects. Here are the tables of the database:
 
--projects (id,title,location,year,creator,created_at,update_at,<span>user_id</span>)<br>
+-projects (id,title,location,year,creator,created_at,update_at,user_id)<br>
 
 -users (id,name,email,password,remember_token,created_at,update_at)<br>
 
@@ -73,6 +73,7 @@ ressources/views/project/index.blade.php
 </body>
 
 ```
+<h2>Test</h2>
 
 
 ## Authors
