@@ -78,7 +78,60 @@ ressources/views/project/index.blade.php
 ```
 <h3>Models and relation between table</h3>
 
-Thanks to Eloquent, Laravel allows the user to create very simple relations between the table to get the data. For example, in our database we have a relation between <u>projects</u> and <u>tags</u>. 
+Thanks to Eloquent, Laravel allows the user to create very simple relations between the table to get the data. For example, in our database we have a relation many to many between *projects* and *tags*. A project can have a lot of tags, and tags can be part of several projects. So in the model project model we create a function: 
+
+app/Project.php
+
+```
+	public function tags() {
+		return $this->belongsToMany('App\Tag');
+	}
+
+```
+app/Http/Controllers/ProjectController.php
+
+```
+$projects = $tag->projects;
+//this will allow us to get all the projects which have relation with this tags.
+
+```
+
+<h3>Blade </h3>
+
+Blade allows to use php in a very easy way in the views. For example to display a project we can simply do that:
+
+```
+@foreach ($allProjects as $projectL)
+
+        <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                  
+                  <div class="caption">
+                    <li>Title: {{$projectL->title}}</li> 
+                    <p><li>Location: {{$projectL->location}}</li></p>
+                    <p><li>Creator: {{$projectL->creator}}</li></p>
+                    <p><li>Year: {{$projectL->year}}</li></p>
+                    <p><li>Description: {{$projectL->description}}</li></p>
+                    <p><a href="/project/update/{{$projectL->id}}" class="btn btn-primary" ><input type="submit"   value="Update settings" class="btn btn-primary">  </a>
+                  </div>
+                </div>
+              </div>
+@endforeach
+
+```
+
+We can also use @if @endif:
+
+```
+@if ($projects != null)
+    @foreach ($projects as $project)
+        {{$project->title}}
+    @endforeach
+@endif    
+```
+
+
+
 
 
 
