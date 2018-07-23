@@ -19,7 +19,7 @@
 @foreach ($projects as $project)
         <div class="col-sm-5 col-md-3">
           <div class="thumbnail">
-            <img src="<?php echo asset("/".$project->images->first()['file'])?>">
+            <img class="img-thumbnail" src="<?php echo asset("/".$project->images->first()['file'])?>">
             <div class="caption">
               <li>Title: {{$project->title}}</li> 
               <p><li>Location: {{$project->location}}</li></p>

@@ -159,6 +159,6 @@ class ProjectController extends Controller
         $like = new Like;
         $project->likes()->save($like);
         $user->likes()->save($like);
-        return redirect("/projects/$project->id");
+        return redirect()->back();
     }
 }

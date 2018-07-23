@@ -61,19 +61,6 @@
                             <li class="header__sign">
                                 <a class="" href="{{ route('login') }}">{{ __('auth.login').'/'.__('auth.register') }}</a>
                             </li>
-                            <li class="header__bar">
-                                <span></span>
-                            </li>
-                            <li class="header__lang">
-                                <ul>
-                                    <li>
-                                        <a class="header__lang--en" href="#">en</a>
-                                    </li>
-                                    <li>
-                                        <a class="header__lang--nl" href="#">nl</a>
-                                    </li>
-                                </ul>
-                            </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -94,6 +81,19 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="header__bar">
+                            <span></span>
+                        </li>
+                        <li class="header__lang">
+                            <ul>
+                                <li>
+                                    <a class="header__lang--en" href="#">en</a>
+                                </li>
+                                <li>
+                                    <a class="header__lang--nl" href="#">nl</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -140,5 +140,18 @@
         </div>
     </footer>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', init, false);
+
+    function init() {
+        $(".like").on("click", function (ev) {
+            ev.preventDefault();
+            var form = $(ev.currentTarget).find('form')[0];
+            form.submit();
+            return false;
+        });
+    }
+</script>
 </body>
 </html>

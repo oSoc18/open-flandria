@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <section class="show show__content">
         <div class="row" id="image-data">
             <div class="col-lg-8">
@@ -28,10 +27,14 @@
                 <div class="show__panel">
                     <ul class="row show__panel__buttons">
                         <li class="show__panel__item col-lg-2">
-                            <button class="tiny__button like">
+                            <a href="#" class="tiny__button like">
                                 <span>Like</span>
                                 <?php include("img/SVG/like.php") ?>
-                            </button>
+                                <form action="/projects/like/{{$project->id}}" style="display: none;" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                </form>
+                            </a>
                         </li>
                         <li class="show__panel__item col-lg-2">
                             <button class="tiny__button bookmark">
@@ -40,23 +43,17 @@
                             </button>
                         </li>
                         <li class="show__panel__item col-lg-2">
+                            @if(Auth::check() && Auth::user()->hasAnyRole('admin'))
+                                ({{$project->images->first()['downloads']}})
+                            @endif
                             <a href="/images/{{$project->images->first()['id']}}/download" id="download"
                                class="tiny__button download">
                                 <span>Download</span>
                                 <?php include("img/SVG/download.php") ?>
                             </a>
-                            @if(Auth::check() && Auth::user()->hasAnyRole('admin'))
-                                ({{$project->images->first()['downloads']}})
-                            @endif
-                        </li>
-                        <li class="show__panel__item col-lg-2">
-                            <button class="tiny__button share">
-                                <span>Share</span>
-                                <?php include("img/SVG/share.php") ?>
-                            </button>
                         </li>
                         <li class="show__panel__item col-lg-4 text-right">
-                            License : <span>{{$project->images->first()['copyright']}}</span>
+                            License : <span>{{$project->images->first()['license']}}</span>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +64,7 @@
                     @if($project->year) ({{$project->year}}) @endif
 
                 </h1>
-                <span class="u-title type-4 u-uppercase bold u-title__location">{{$project->location}}</span>
+                <span class="u-title type-4 u-uppercase bold u-title__category">{{$project->location}}</span>
                 <div class="show__section show__desc">
                     <h1 class="show__subtitle u-title type-4">
                         {{__('projects.description')}}
@@ -92,16 +89,17 @@
                                 <span>{{$project->images->first()['credit']}}</span>
                             </div>
                         </li>
-                    </ul>
-                </div>
-                <div class="show__section show__keywords">
+
+                <li class="show__section show__keywords">
                     <h1 class="show__subtitle u-title type-4">{{__('projects.keywords')}}</h1>
                     <ul>
                         @foreach($project->tags as $tag)
                             <li class="show__keywords__item u-uppercase">
-                                <a href="#">#{{$tag->name}}</a>
+                                #{{$tag->name}}
                             </li>
                         @endforeach
+                    </ul>
+                </li>
                     </ul>
                 </div>
             </div>
