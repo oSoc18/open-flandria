@@ -125,10 +125,9 @@
 .header__lang--en {
     opacity: .5;
     margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 10px;
 }
 .header__lang--en::after {
-    content: "/";
     display: block;
     float: right;
 }

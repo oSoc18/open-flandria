@@ -59,3 +59,8 @@ Route::get('contact', function() {
 Route::get('submited', function() {
     return view('submited');
 });
+
+Route::get('thanks', function() {
+    return view('thanks');
+});
+
