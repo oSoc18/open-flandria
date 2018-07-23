@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="sign">
-        <h1 class="title__sign u-title type-1">Sign in / Sign up</h1>
+        <h1 class="title__sign u-title type-1">Sign up</h1>
         <p class="sign__desc">If you have any questions, suggestions or need help, please contact us via the form below.</p>
         <div class="sign__field s--signup">
             <div class="sign__form sign__sign-in">

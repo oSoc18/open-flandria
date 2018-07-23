@@ -119,6 +119,18 @@
                     <h1 class="footer__title">About open flandria</h1>
                     <a class="footer__item" href="#">What is Open Flandria? </a>
                     <a class="footer__item" href="">Contact</a>
+                    <ul class="footer__social">
+                        <li class="footer__social--item">
+                            <a href="https://www.instagram.com/openflandria/?hl=fr" target="_blank">
+                                 <?= include('img/SVG/instagram.php') ?>
+                            </a>
+                        </li>
+                        <li class="footer__social--item">
+                            <a href="https://www.facebook.com/Open-Flandria-181185236077878/" target="_blank">
+                                <?= include('img/SVG/facebook.php') ?>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <h1 class="footer__title">Other</h1>
