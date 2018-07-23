@@ -162,12 +162,18 @@ To create the search bar we have used a simple database search. When the user ta
 <h3>Author</h3>
 * **Mohanad ABOU ZAIDI** - https://github.com/mohanadabouzaidi
 <h3>Project Contributor</h3>
-* **Gwen**              - Project Manager       -https://github.com/gwenfranck
-* **Julija**            - Communication         -https://github.com/
-* **Brysen Ackx**       - Fullstack developer   -https://github.com/awildbrysen
-* **Kevin**             - Front-end developer   -https://github.com/
-* **Smayn**             - designer              -https://github.com/
-* **Mohanad**           - Back-end developer    -https://github.com/mohanadabouzaidi
+* **Gwen**              -
+Project Manager -https://github.com/gwenfranck
+* **Julija**            
+- Communication -https://github.com/
+* **Brysen Ackx**       
+- Fullstack developer-https://github.com/awildbrysen
+* **Kevin**             
+- Front-end developer -https://github.com/
+* **Smayn**           
+- designer -https://github.com/
+* **Mohanad*
+- Back-end developer -https://github.com/mohanadabouzaidi
 
 
 ## License
