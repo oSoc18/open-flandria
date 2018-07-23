@@ -130,16 +130,45 @@ We can also use @if @endif:
 @endif    
 ```
 
+<h3>Routes</h3>
 
+We have used web route to register our route for the application. It is stored in the file routes/web.php. In this file, we can define which route will call which method of a specified controller. We also have to choose which kind of request we are doing (PUT, GET, DELETE, POST). 
+Here is an example:
 
+```
+Route::get('/project', 'ProjectController@index');
 
+```
+the name of the site + /project will return all the projects of the database because the index method in the ProjectController return that:
 
+```
+    public function index()
+    {
+        $projects = Project::all();
+
+        return view('project.index')->with('projects', $projects);
+    }
+```
+#Our own features and explanation
+
+We have used the authentication which is provided by Laravel, to see more about it go on the official documentation: https://laravel.com/docs/5.6/authentication.
+
+<h3> The search bar </h3>
+
+To create the search bar we have used a simple database search. When the user tap a word in the search bar, the controller goes to the database and then see if there is a tag, project title or a description which matches to the search word. We haven't get the time to develop a more efficient way for the search bar. We have thinked about an elastic search. 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+<h3>Author</h3>
+* **Mohanad ABOU ZAIDI** - https://github.com/mohanadabouzaidi
+<h3>Project Contributor</h3>
+* **Gwen**              - Project Manager       -https://github.com/gwenfranck
+* **Julija**            - Communication         -https://github.com/
+* **Brysen Ackx**       - Fullstack developer   -https://github.com/awildbrysen
+* **Kevin**             - Front-end developer   -https://github.com/
+* **Smayn**             - designer              -https://github.com/
+* **Mohanad**           - Back-end developer    -https://github.com/mohanadabouzaidi
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
