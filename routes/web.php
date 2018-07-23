@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 
+Route::get('images/{image}/download', 'ImageController@download');
+
 Route::get('projects', 'ProjectController@index');
 Route::get('projects/{project}', 'ProjectController@show');
 Route::get('projects/edit/{project}', 'ProjectController@edit')->middleware('admin');
