@@ -160,19 +160,19 @@ To create the search bar we have used a simple database search. When the user ta
 ## Authors
 
 <h3>Author</h3>
-* **Mohanad ABOU ZAIDI** - https://github.com/mohanadabouzaidi
+* **Mohanad ABOU ZAIDI**
 <h3>Project Contributor</h3>
-* **Gwen**              -
+* **Gwen** <br>
 Project Manager -https://github.com/gwenfranck
-* **Julija**            
+* **Julija**    <br>        
 - Communication -https://github.com/
-* **Brysen Ackx**       
+* **Brysen Ackx**   <br>    
 - Fullstack developer-https://github.com/awildbrysen
-* **Kevin**             
+* **Kevin**        <br>     
 - Front-end developer -https://github.com/
-* **Smayn**           
+* **Smayn**        <br>   
 - designer -https://github.com/
-* **Mohanad*
+* **Mohanad*<br>
 - Back-end developer -https://github.com/mohanadabouzaidi
 
 
