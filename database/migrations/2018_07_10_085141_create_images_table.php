@@ -19,6 +19,7 @@ class CreateImagesTable extends Migration
             $table->string('credit');
             $table->string('license');
             $table->integer('year');
+            $table->integer('downloads');
             $table->timestamps();
 
 	        $table->integer('project_id')->unsigned()->index();

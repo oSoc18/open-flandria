@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="show show__content">
-        <div class="row">
+        <div class="row" id="image-data">
             <div class="col-lg-8">
                 <figure class="show__img">
                     <img src="<?= asset($project->images->first()['file']) ?>" class="img-fluid" alt="Responsive image">
@@ -22,15 +22,13 @@
                             </button>
                         </li>
                         <li class="show__panel__item col-lg-2">
-                            <a href="#" class="dropdown-item" id="download-button">
-                            <form method="POST" id="download-form" action="/image/{{$project->images->first()['id']}}/download" style="display: none;">
-                                @csrf
-                            </form>
-                            <button class="tiny__button download">
+                            <a href="/images/{{$project->images->first()['id']}}/download" class="tiny__button download">
                                 <span>Download</span>
                                 <?php include ("img/SVG/download.php") ?>
-                            </button>
-                            </a>    
+                            </a>
+                            @if(Auth::check() && Auth::user()->hasAnyRole('admin'))
+                                ({{$project->images->first()['downloads']}})
+                            @endif
                         </li>
                         <li class="show__panel__item col-lg-2">
                             <button class="tiny__button share">
@@ -95,16 +93,9 @@
         document.addEventListener('DOMContentLoaded', init, false);
 
         function init() {
-            document.getElementById('download-button').addEventListener('click', function(ev) {
-                ev.preventDefault();
-                document.getElementById('download-form').submit();
-            });
-
-            document.getElementById('download-form').addEventListener('submit', function(ev) {
-                ev.preventDefault();
+            $("#image-data").on("contextmenu", "img", function(e) {
                 return false;
             });
-            
         }
     </script>
 @endsection

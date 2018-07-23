@@ -82,6 +82,7 @@ class ProjectController extends Controller
                 $image->license = $request[$identifier.'-copyright'];
                 $image->year = $request[$identifier.'-year'];
                 $image->project_id = $project->id;
+                $image->downloads = 0;
                 $image->save();
             }
         }
