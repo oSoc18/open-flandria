@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'noexist' => 'Deze tag bestaat niet',
     'none' => 'Er waren geen resultaten gevonden',
+    'nosearch' => 'Er was geen zoekterm opgegeven'
 ];
 
 ?>

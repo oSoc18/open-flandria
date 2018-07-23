@@ -67,10 +67,10 @@ class ProjectController extends Controller
         }
 
         $amtImages = $request['amt-of-images'];
-        for($i = 1; $i < $amtImages; $i++) {
-            $identifier = 'image-'.$i;
+        for ($i = 1; $i < $amtImages; $i++) {
+            $identifier = 'image-' . $i;
             $file = $request->file($identifier);
-            if($request->hasFile($identifier)) {
+            if ($request->hasFile($identifier)) {
                 $image = new Image;
 
                 $path = $file->store("public/projects/$project->id");
@@ -78,9 +78,9 @@ class ProjectController extends Controller
                 $path = substr($path, strlen($prefix));
 
                 $image->file = "storage/" . $path;
-                $image->credit = $request[$identifier.'-credit'];
-                $image->license = $request[$identifier.'-copyright'];
-                $image->year = $request[$identifier.'-year'];
+                $image->credit = $request[$identifier . '-credit'];
+                $image->license = $request[$identifier . '-copyright'];
+                $image->year = $request[$identifier . '-year'];
                 $image->project_id = $project->id;
                 $image->downloads = 0;
                 $image->save();
@@ -147,11 +147,12 @@ class ProjectController extends Controller
         return redirect()->route('index');
     }
 
-    public function like(Project $project) {
+    public function like(Project $project)
+    {
         $user = Auth::user();
 
         $like = $user->likes->where('project_id', $project->id)->first();
-        if(isset($like)) {
+        if (isset($like)) {
             $like->delete();
             return redirect("/projects/$project->id");
         }

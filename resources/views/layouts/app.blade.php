@@ -49,8 +49,8 @@
             <ul class="header__menu-horizontal">
                 <li class="header__center">
                     <form class="header__search" action="{{route('search')}}" method="GET">
-                        <input type="search" placeholder="Search the bulding, location, materials…"/>
-                        <input type="submit" value="" />
+                        <input type="search" id="query" name="query" placeholder="Treehouse"/>
+                        <input type="submit" value=""/>
                     </form>
                 </li>
                 <li class="header__right">

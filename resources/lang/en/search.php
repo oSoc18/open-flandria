@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'noexist' => 'This tag does not exist',
+    'nosearch' => 'No search query entered',
     'none' => 'No search result found',
 ];
 

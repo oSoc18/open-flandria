@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\Tag;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index(Request $request) {
-        $tagName = $request->input('query');
-        $errors = [];
-
-        $tag = Tag::where('name', $tagName)->first();
-        if(!$tag){
-            array_push($errors, "search.noexist");
-            return view('search.show')->with([
-                'errors' => $errors,
-            ]);
+    public function index(Request $request)
+    {
+        $query = $request->input('query');
+        if (!isset($query)) {
+            $status = 'search.nosearch';
+            return view('search.show')->with('status', $status)->with('query', $query);
         }
 
-        if($tag->projects->isEmpty()) {
-            array_push($errors, "search.none");
-            return view('search.show')->with([
-                'errors' => $errors,
-            ]);
+        $projects = Project::where('title', 'like', "%$query%")->orWhere('description', 'like', "%$query%")->get();
+
+        $tag = Tag::where('name', "$query")->first();
+        if (isset($tag)) {
+            $projects = $projects->merge($tag->projects);
         }
 
-        return view('search.show')->with('tag', $tag);
+        if ($projects->isEmpty()) {
+            $status = 'search.none';
+            return view('search.show')->with('status', $status)->with('query', $query)->with('projects', $projects);
+        }
+
+        return view('search.show')->with('query', $query)->with('projects', $projects);
     }
 }
