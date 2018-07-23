@@ -92,6 +92,8 @@ class ProjectController extends Controller
                 $image->save();
             }
         }
+
+        return redirect("/projects/$project->id");
     }
 
     /**
