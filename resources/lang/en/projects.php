@@ -10,6 +10,9 @@ return [
     'photographer' => 'Photographer',
     'more' => "See more",
     'keywords' => 'Keywords',
+    'thnksfordownload' => 'Thanks for downloading from Open Flandria!',
+    'attribution' => 'Attribution',
+    'attributionlink' => 'Picture by :name, [:license], found on Open Flandria [:link]',
 ];
 
 ?>
