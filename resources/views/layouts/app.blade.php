@@ -12,9 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <script src="{{ asset('js/sign-form.js') }}" defer></script>
-    <script src="{{ asset('js/upload-form.js') }}" defer></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -33,6 +32,9 @@
     <link href="{{ asset('css/page/show.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/about.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/sign.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/upload.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/submited.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/contact.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">

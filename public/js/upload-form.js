@@ -11,7 +11,7 @@ var transitionEnd = 'webkitTransitionEnd transitionend';
 function formReset() {
     value = 0;
     $progressBar.val(value);
-    $('form input').not('button').val('').removeClass('hasInput');
+    $('form input').not('button').removeClass('hasInput');
     $('.js-form-step').removeClass('left leaving');
     $('.js-form-step').not('.js-form-step[data-step="1"]').addClass('hidden waiting');
     $('.js-form-step[data-step="1"]').removeClass('hidden');
@@ -25,6 +25,13 @@ function formReset() {
     return false;
 }
 
+$('.button-add').click(function(){
+    $('.form-step-2 .fieldgroup').append('<li><input type="file" id="photos"/></li>');
+    $animContainer.css({
+        'paddingBottom': $('.js-form-step[data-step="2"]').height() + 'px'
+    });
+});
+
 /**
  * Sets up the click handlers on the form. Next/reset.
  * ===================================================
@@ -33,9 +40,21 @@ function setupClickHandlers() {
 
     // Show next form on continue click
     $('button[type="submit"]').on('click', function(event) {
+        if($('.required').is(":empty")) {
+            $('.alert').css('opacity', '1');
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            event.preventDefault();
+        } else {
+            event.preventDefault();
+            $('.alert').css('opacity', '0');
+            var $currentForm = $(this).parents('.js-form-step');
+            showNextForm($currentForm);
+        }
+    });
+
+    $('.upload__button').click(function(){
         event.preventDefault();
-        var $currentForm = $(this).parents('.js-form-step');
-        showNextForm($currentForm);
     });
 
     // Reset form on reset button click
@@ -126,6 +145,14 @@ function setupFloatLabels() {
                 break;
 
             case 'INPUT':
+                if (this.value !== '') {
+                    this.className = 'hasInput';
+                } else {
+                    this.className = '';
+                }
+                break;
+
+            case 'TEXTAREA':
                 if (this.value !== '') {
                     this.className = 'hasInput';
                 } else {

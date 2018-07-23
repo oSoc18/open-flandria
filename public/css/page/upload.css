@@ -1,51 +1,30 @@
-body.freeze {
-    pointer-events: none;
-}
-
-h1 {
-    margin: 0;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-weight: normal;
-    line-height: 2.2rem;
-}
-
-.section {
+.upload {
     max-width: 500px;
-    padding: 4rem;
+    padding: 40px;
     margin: 5vh auto 0 auto;
     background: white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-.section:before {
-    content: "";
-    width: 100%;
-    background: #0ce479;
-    height: 170px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
 
-.form-instructions {
+
+
+.upload .form-instructions {
     text-align: center;
 }
 
-form {
+.upload form {
     margin: 2rem auto;
     width: 100%;
     max-width: 330px;
     will-change: transform;
 }
 
-.fieldgroup {
+.upload .fieldgroup {
     margin: 1.5rem 0;
     position: relative;
 }
 
-label {
+.upload label {
     position: absolute;
     top: .8rem;
     left: 0;
@@ -55,11 +34,11 @@ label {
     opacity: .5;
     will-change: top, font-size;
 }
-label:hover {
+.upload label:hover {
     cursor: text;
 }
 
-input {
+.upload input[type="text"], .upload textarea {
     border: 1px solid #fff;
     font-size: 1.2rem;
     padding: .6rem;
@@ -72,94 +51,27 @@ input {
     max-width: 350px;
     border-radius: 0;
 }
-input:focus {
+.upload input[type="text"]:focus, .upload textarea:focus {
     outline: none;
 }
-input:valid {
+.upload input[type="text"]:valid, .upload textarea:valid {
     border-color: #444;
 }
-input:focus + label, input.hasInput + label {
+.upload  input[type="text"]:focus + label, .upload input[type="text"].hasInput + label, .upload textarea:focus + label, .upload textarea.hasInput + label {
     top: -.8rem;
     font-size: .7rem;
 }
 
-.btn {
-    color: #fff;
-    background-color: #0bcc6c;
-    padding: .8rem;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    border-radius: 5px;
-    border: 2px solid transparent;
-    min-width: 45px !important;
-}
-.btn:hover, .btn.hover {
-    color: #fff;
-    background-color: #1fe080;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    transition: .2s;
-}
-.btn:active, .btn.active {
-    color: #fff;
-    background-color: #00b858;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-    outline: 2px solid #0bcc6c;
-}
-.btn:focus, .btn.focus {
-    color: #fff;
-    outline: 2px solid #0bcc6c;
-    outline-offset: 2px;
-}
-.btn:active:focus, .btn.active.focus {
-    outline: 4px solid #0bcc6c;
-}
-.btn.hover, .btn.active {
-    outline: none;
-}
-
-.btn-alt {
-    background-color: transparent;
-    color: #0bcc6c;
-    border: 2px solid #0bcc6c;
-}
-.btn-alt:hover, .btn-alt.hover {
-    background-color: transparent;
-    color: #00a444;
-    border-color: #00a444;
-    text-shadow: none;
-}
-.btn-alt:focus, .btn-alt.focus {
-    color: #00b858;
-}
-.btn-alt:active, .btn-alt.active {
-    color: #fff;
-    background-color: #0bcc6c;
-    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
-}
-.btn-alt.hover, .btn-alt.active {
-    outline: none;
-}
-
-.buttons {
+.upload .buttons {
     display: flex;
 }
-.buttons .btn {
+.upload .buttons .btn {
     margin-right: 15px;
 }
 
-form .btn {
-    display: inline-block;
-    width: 100%;
-    max-width: 220px;
-    margin: 4rem auto 0 auto;
-}
 
-[data-step="4"] button.btn {
-    display: block;
-    margin: 0 auto;
-}
 
-.form-progress {
+.upload .form-progress {
     position: relative;
     display: block;
     margin: 3rem auto;
@@ -167,7 +79,7 @@ form .btn {
     max-width: 400px;
 }
 
-progress {
+.upload progress {
     display: block;
     position: relative;
     top: 5px;
@@ -182,17 +94,17 @@ progress {
     transition: 1s;
     will-change: contents;
 }
-progress::-webkit-progress-bar {
+.upload progress::-webkit-progress-bar {
     background-color: #ddd;
 }
-progress::-webkit-progress-value {
-    background-color: #0bcc6c;
+.upload progress::-webkit-progress-value {
+    background-color: #F8E71C;
     transition: all 0.5s ease-in-out;
 }
 
-.form-progress-indicator {
+.upload .form-progress-indicator {
     position: absolute;
-    top: -6px;
+    top: -3px;
     left: 0;
     display: inline-block;
     width: 20px;
@@ -204,52 +116,51 @@ progress::-webkit-progress-value {
     transition-delay: .3s;
     will-change: transform;
 }
-.form-progress-indicator.one {
+.upload .form-progress-indicator.one {
     left: 0;
 }
-.form-progress-indicator.two {
+.upload .form-progress-indicator.two {
     left: 33%;
 }
-.form-progress-indicator.three {
+.upload .form-progress-indicator.three {
     left: 66%;
 }
-.form-progress-indicator.four {
+.upload .form-progress-indicator.four {
     left: 100%;
 }
-.form-progress-indicator.active {
+.upload .form-progress-indicator.active {
     -webkit-animation: bounce .5s forwards;
     animation: bounce .5s forwards;
     -webkit-animation-delay: .5s;
     animation-delay: .5s;
-    border-color: #0bcc6c;
+    border-color: #F8E71C;
 }
 
-.animation-container {
+.upload .animation-container {
     position: relative;
     width: 100%;
     transition: .3s;
-    will-change: padding;
     overflow: hidden;
 }
 
-.form-step {
+.upload .form-step {
     position: absolute;
     transition: 1s ease-in-out;
     transition-timing-function: ease-in-out;
     will-change: transform, opacity;
 }
 
-.form-step.leaving {
+.upload .form-step.leaving {
     -webkit-animation: left-and-out .5s forwards;
     animation: left-and-out .5s forwards;
 }
 
-.form-step.waiting {
+.upload .form-step.waiting {
     -webkit-transform: translateX(400px);
     transform: translateX(400px);
 }
 
-.form-step.coming {
+.upload .form-step.coming {
     -webkit-animation: right-and-in .5s forwards;
     animation: right-and-in .5s forwards;
 }
@@ -303,7 +214,7 @@ progress::-webkit-progress-value {
         transform: scale(1);
     }
 }
-.sr-only {
+.upload .sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -314,6 +225,38 @@ progress::-webkit-progress-value {
     border: 0;
 }
 
-.hidden {
+.upload .hidden {
     display: none;
+}
+
+.upload input[type="submit"] {
+
+}
+
+.upload input[type="submit"] {
+    display: block;
+    width: 120px;
+    height: 43px;
+    background: #F8E71C;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border: navajowhite;
+    border-radius: 4px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button-add {
+    background: url('../../img/icons/add.svg') no-repeat center center;
+    width: 48px;
+    height: 48px;
+    font-size: 0px;
+}
+
+.upload .alert {
+    margin-top: 10px;
 }

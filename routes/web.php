@@ -43,3 +43,15 @@ Route::get('gallery', function() {
 Route::get('sign', function() {
     return view('sign');
 });
+
+Route::get('up', function() {
+    return view('up');
+});
+
+Route::get('contact', function() {
+    return view('contact');
+});
+
+Route::get('submited', function() {
+    return view('submited');
+});
