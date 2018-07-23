@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('location');
             $table->integer('year');
             $table->string('creator');
+            $table->text('description');
             $table->timestamps();
 	    
             $table->integer('user_id')->unsigned()->index()->nullable();
