@@ -57,3 +57,7 @@
 .show path {
     stroke: #000;
 }
+
+.show .tiny__button.filled path {
+    fill: black;
+}

@@ -140,4 +140,5 @@
         </section>
     </div>
     <script src="{{ asset('js/upload-form.js') }}" defer></script>
+    <script src="{{ asset('js/interact-button.js') }}" defer></script>
 @endsection

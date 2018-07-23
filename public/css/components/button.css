@@ -31,7 +31,3 @@
 .tiny__button path {
     stroke: yellow;
 }
-
-.tiny__button.filled path {
-    fill: yellow;
-}
