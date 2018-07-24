@@ -3,17 +3,11 @@
 @section('content')
     <section class="gallery">
         <section class="favorites">
-            <h1 class="gallery__title u-title type-2">Your Gallery</h1>
-            <nav>
-                <ul>
-                    <li class="gallery__item">
-                        <a class="u-title type-2 u-uppercase active" href="#">Favorites</a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="u-title type-2 u-uppercase" href="#">Your Downloads</a>
-                    </li>
-                </ul>
-            </nav>
+            <h1 class="gallery__title u-title type-2">Inspiration</h1>
+            <div class="panel">
+                <button class="gallery-edit">Rename</button>
+                <button class="gallery-remove">Remove</button>
+            </div>
             <div class="row gallery__content">
                 <!-- First Card -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -92,26 +86,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="own-gallery">
-            <h1 class="u-title type-2 u-uppercase" href="#">Galleries</h1>
-            <ul class="gallery-wrap row">
-                <li class="col-lg-2">
-                    <a href="#" class="gallery-item">Inspiration</a>
-                </li>
-                <li class="col-lg-2">
-                    <a href="#" class="gallery-item">Inspiration</a>
-                </li>
-                <li class="col-lg-2">
-                    <a href="#" class="gallery-item">Green</a>
-                </li>
-                <li class="col-lg-2">
-                    <a href="#" class="gallery-item">School</a>
-                </li>
-                <li class="col-lg-2">
-                    <a href="#" class="gallery-item new">New</a>
-                </li>
-            </ul>
         </section>
     </section>
 

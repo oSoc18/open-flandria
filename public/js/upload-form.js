@@ -132,12 +132,12 @@ function showNextForm($currentForm) {
  */
 function setupFloatLabels() {
     // Check the inputs to see if we should keep the label floating or not
-    $('form input').not('button').on('blur', function() {
+    $('form input, form textarea').not('button').on('blur', function() {
 
         // Different validation for different inputs
         switch (this.tagName) {
-            case 'SELECT':
-                if (this.value > 0) {
+            case 'TEXTAREA':
+                if (this.value !== '') {
                     this.className = 'hasInput';
                 } else {
                     this.className = '';

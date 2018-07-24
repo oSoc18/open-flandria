@@ -12,22 +12,22 @@
                 <div class="c-card">
                     <div class="c-card__img">
                         <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
+                        <ul>
+                            <li>
+                                <button class="c-card__button tiny__button like">
+                                    <span>Like</span>
+                                    <?php include ("img/SVG/like.php") ?>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="c-card__button tiny__button bookmark">
+                                    <span>Bookmarked</span>
+                                    <?php include ("img/SVG/bookmark.php") ?>
+                                </button>
+                            </li>
+                        </ul>
                         <div class="c-card__details">
                             <h1 class="u-title type-3 u-title__card">Parkburg Spoor Noord</h1>
-                            <ul>
-                                <li>
-                                    <button class="c-card__button tiny__button like">
-                                        <span>Like</span>
-                                        <?php include ("img/SVG/like.php") ?>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="c-card__button tiny__button bookmark">
-                                        <span>Bookmarked</span>
-                                        <?php include ("img/SVG/bookmark.php") ?>
-                                    </button>
-                                </li>
-                            </ul>
                             <div class="c-card__details__creators">
                                 <figure>
                                     <img src="<?= asset("img/author_1.jpg") ?>" alt="">
@@ -48,22 +48,22 @@
                         <div class="c-card tiny">
                             <div class="c-card__img">
                                 <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
+                                <ul>
+                                    <li>
+                                        <button class="c-card__button tiny__button like">
+                                            <span>Like</span>
+                                            <?php include ("img/SVG/like.php") ?>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="c-card__button tiny__button bookmark">
+                                            <span>Bookmarked</span>
+                                            <?php include ("img/SVG/bookmark.php") ?>
+                                        </button>
+                                    </li>
+                                </ul>
                                 <div class="c-card__details">
                                     <h1 class="u-title type-3 u-title__card">Parkburg Spoor Noord</h1>
-                                    <ul>
-                                        <li>
-                                            <button class="c-card__button tiny__button like">
-                                                <span>Like</span>
-                                                <?php include ("img/SVG/like.php") ?>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class="c-card__button tiny__button bookmark">
-                                                <span>Bookmarked</span>
-                                                <?php include ("img/SVG/bookmark.php") ?>
-                                            </button>
-                                        </li>
-                                    </ul>
                                     <div class="c-card__details__creators">
                                         <figure>
                                             <img src="<?= asset("img/author_1.jpg") ?>" alt="">
@@ -81,22 +81,22 @@
                         <div class="c-card tiny">
                             <div class="c-card__img">
                                 <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
+                                <ul>
+                                    <li>
+                                        <button class="c-card__button tiny__button like">
+                                            <span>Like</span>
+                                            <?php include ("img/SVG/like.php") ?>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="c-card__button tiny__button bookmark">
+                                            <span>Bookmarked</span>
+                                            <?php include ("img/SVG/bookmark.php") ?>
+                                        </button>
+                                    </li>
+                                </ul>
                                 <div class="c-card__details">
                                     <h1 class="u-title type-3 u-title__card">Parkburg Spoor Noord</h1>
-                                    <ul>
-                                        <li>
-                                            <button class="c-card__button tiny__button like">
-                                                <span>Like</span>
-                                                <?php include ("img/SVG/like.php") ?>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class="c-card__button tiny__button bookmark">
-                                                <span>Bookmarked</span>
-                                                <?php include ("img/SVG/bookmark.php") ?>
-                                            </button>
-                                        </li>
-                                    </ul>
                                     <div class="c-card__details__creators">
                                         <figure>
                                             <img src="<?= asset("img/author_1.jpg") ?>" alt="">
@@ -114,22 +114,22 @@
                         <div class="c-card tiny">
                             <div class="c-card__img">
                                 <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
+                                <ul>
+                                    <li>
+                                        <button class="c-card__button tiny__button like">
+                                            <span>Like</span>
+                                            <?php include ("img/SVG/like.php") ?>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="c-card__button tiny__button bookmark">
+                                            <span>Bookmarked</span>
+                                            <?php include ("img/SVG/bookmark.php") ?>
+                                        </button>
+                                    </li>
+                                </ul>
                                 <div class="c-card__details">
                                     <h1 class="u-title type-3 u-title__card">Parkburg Spoor Noord</h1>
-                                    <ul>
-                                        <li>
-                                            <button class="c-card__button tiny__button like">
-                                                <span>Like</span>
-                                                <?php include ("img/SVG/like.php") ?>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class="c-card__button tiny__button bookmark">
-                                                <span>Bookmarked</span>
-                                                <?php include ("img/SVG/bookmark.php") ?>
-                                            </button>
-                                        </li>
-                                    </ul>
                                     <div class="c-card__details__creators">
                                         <figure>
                                             <img src="<?= asset("img/author_1.jpg") ?>" alt="">
@@ -147,22 +147,22 @@
                         <div class="c-card tiny">
                             <div class="c-card__img">
                                 <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
+                                <ul>
+                                    <li>
+                                        <button class="c-card__button tiny__button like">
+                                            <span>Like</span>
+                                            <?php include ("img/SVG/like.php") ?>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="c-card__button tiny__button bookmark">
+                                            <span>Bookmarked</span>
+                                            <?php include ("img/SVG/bookmark.php") ?>
+                                        </button>
+                                    </li>
+                                </ul>
                                 <div class="c-card__details">
                                     <h1 class="u-title type-3 u-title__card">Parkburg Spoor Noord</h1>
-                                    <ul>
-                                        <li>
-                                            <button class="c-card__button tiny__button like">
-                                                <span>Like</span>
-                                                <?php include ("img/SVG/like.php") ?>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class="c-card__button tiny__button bookmark">
-                                                <span>Bookmarked</span>
-                                                <?php include ("img/SVG/bookmark.php") ?>
-                                            </button>
-                                        </li>
-                                    </ul>
                                     <div class="c-card__details__creators">
                                         <figure>
                                             <img src="<?= asset("img/author_1.jpg") ?>" alt="">

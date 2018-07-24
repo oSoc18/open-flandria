@@ -17,6 +17,16 @@
     width: 100%;
 }
 
+.c-card__img ul {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.c-card__img ul li {
+    display: inline-block;
+}
+
 .c-card__img:hover > .c-card__details {
     bottom: 0;
 }
@@ -56,6 +66,7 @@
     border-radius: 40px;
     position: relative;
     float: left;
+    visibility: hidden;
 }
 
 .c-card__details__creators figure img {
@@ -65,16 +76,6 @@
     position: absolute;
 }
 
-.c-card__details ul {
-    position: absolute;
-    top: -50px;
-    right: 0;
-}
-
-.c-card__details ul li {
-    position: relative;
-    display: inline;
-}
 
 .c-card__details ul li:nth-child(1) button span, .c-card__details ul li:nth-child(2) button span {
     display: none;
@@ -107,6 +108,7 @@
 .c-card.tiny .c-card__details__creators figure {
     height: 18px;
     width: 18px;
+
 }
 
 .c-card.tiny .c-card__details__creators div span:first-child {

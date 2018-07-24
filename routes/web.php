@@ -64,3 +64,8 @@ Route::get('thanks', function() {
     return view('thanks');
 });
 
+Route::get('gallery-single', function() {
+    return view('gallery-single');
+});
+
+
