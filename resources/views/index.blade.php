@@ -80,31 +80,32 @@
                                 <ul>
                                     <li>
                                         <input class="pop__up--value" type="text">
-                                        <button class="pop__up--add">Add</button>
+                                        <button class="pop__up--add" value="add">Add</button>
                                     </li>
                                     <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
-                                    </li>
-                                    <li>
-                                        <button>Inpiration</button>
+                                        <ul>
+                                            <li>
+                                                <button class="pop__up--item" value="inspiration">Inpiration</button>
+                                            </li>
+                                            <li>
+                                                <button class="pop__up--item" value="baguette">Baguette</button>
+                                            </li>
+                                            <li>
+                                                <button class="pop__up--item" value="school">School</button>
+                                            </li>
+                                            <li>
+                                                <button class="pop__up--item" value="green trees">Green trees</button>
+                                            </li>
+                                            <li>
+                                                <button class="pop__up--item" value="blue">blue</button>
+                                            </li>
+                                            <li>
+                                                <button class="pop__up--item" value="houses">houses</button>
+                                            </li>
+                                            <li>
+                                                <button class="pop__up--item" value="garden">garden</button>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>

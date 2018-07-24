@@ -15,14 +15,28 @@ $('.tiny__button.bookmark').click(function (ev) {
 });
 /********Add Element*********/
 $('.pop__up--add').click(function () {
-    var popupItemValue = $('.pop__up--value').val();
-    $('.c-card__popup > ul').html('<li><button>Salut</button></li>').text(popupItemValue);
-    console.log(popupItemValue);
+    if ($('.pop__up--value').val() == '') {
+        alert('Empty!')
+    } else {
+        var popupItemValue = $('.pop__up--value').val();
+        $('.c-card__popup > ul li ul').prepend("<li><button value=" + popupItemValue + ">" + popupItemValue + "</button></li>");
+        console.log(popupItemValue);
+        $(this).text('added ✓');
+        $('.pop__up--value').val('');
+        setTimeout(function () {
+            $('.pop__up--add').text('add');
+        }, 1000);
+    }
 });
 
 /******************************Add To Gallery*****************************/
-$('.c-card__popup button').click(function () {
-
-    $(this).text('saved ✓');
-    $(this).css('background', '#E0F0D9');
+$('.c-card__popup .pop__up--item').on('click', function () {
+    $(this).toggleClass("saved");
+    if ($(this).hasClass("saved")) {
+        $(this).text('saved ✓');
+        $(this).css('background', '#E0F0D9');
+    } else {
+        $(this).css('background', '#FFF200');
+        $(this).text($(this).val());
+    }
 });

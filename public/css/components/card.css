@@ -111,26 +111,19 @@
     margin: 5px 0 15px 0;
 }
 
-.c-card__popup li:first-child button {
-    background: red;
+.c-card__popup li .pop__up--add {
+    background: #000;
+    color: #FFF;
 }
 
 .c-card__popup li {
     display: block !important;
 }
 
-.c-card__popup li:first-child {
+.c-card__popup .pop__up--add {
     margin-bottom: 20px;
 }
 
-.c-card__popup li:first-child::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #cccccc;
-    margin-top: 15px;
-}
 
 .c-card__pop li:first-child input {
     border-radius: 40px;
