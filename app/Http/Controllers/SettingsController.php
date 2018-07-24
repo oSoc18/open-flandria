@@ -8,7 +8,11 @@ use Validator;
 
 class SettingsController extends Controller
 {
-    // user settings page 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index() {
        $user = Auth::user(); 
        return view('users.settings.index')->with('user', $user);

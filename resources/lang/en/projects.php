@@ -13,6 +13,7 @@ return [
     'thnksfordownload' => 'Thanks for downloading from Open Flandria!',
     'attribution' => 'Attribution',
     'attributionlink' => 'Picture by :name, [:license], found on Open Flandria [:link]',
+    'other' => 'Ohter projects',
 ];
 
 ?>

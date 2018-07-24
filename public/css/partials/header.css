@@ -123,22 +123,21 @@
 }
 
 .header__lang--en {
-    opacity: .5;
     margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 10px;
 }
 .header__lang--en::after {
-    content: "/";
     display: block;
     float: right;
 }
 
-.header__lang--nl {
-    opacity: 1;
-}
-
 .header__lang li a {
     font-weight: 700;
+    opacity: 0.5;
+}
+
+.header__lang li a.header__lang--active {
+    opacity: 1;
 }
 
 .header__menu-horizontal {

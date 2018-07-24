@@ -25,3 +25,29 @@
     font-weight: 300;
     margin: 5px 0;
 }
+
+
+.footer__social--item {
+    float: left;
+    margin-top: 5px;
+}
+
+.footer__social--item a {
+    display: block;
+    font-size: 0;
+    margin-right: 20px;
+}
+
+
+.footer__social--item:last-child a {
+    margin-right: 0;
+}
+
+.footer__social--item svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer__social--item path, .footer__social--item circle {
+    fill: #FFF !important;
+}

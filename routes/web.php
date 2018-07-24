@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\App;
 
 Route::get('/', 'HomeController@index')->name('index');
 
@@ -54,6 +55,16 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 Route::post('image/{$image}/download', 'ImageController@download')->name('download');
 
+Route::get('locale/en', function() {
+    App::setLocale('en');
+    return redirect()->back()->withCookie('lang', 'en');
+});
+
+Route::get('locale/nl', function() {
+    App::setLocale('nl');
+    return redirect()->back()->withCookie('lang', 'nl');
+});
+
 Route::get('about', function() {
     return view('about');
 });
@@ -64,4 +75,28 @@ Route::get('gallery', function() {
 
 Route::get('sign', function() {
     return view('sign');
+});
+
+Route::get('signin', function() {
+    return view('signin');
+});
+
+Route::get('signup', function() {
+    return view('signup');
+});
+
+Route::get('up', function() {
+    return view('up');
+});
+
+Route::get('contact', function() {
+    return view('contact');
+});
+
+Route::get('submited', function() {
+    return view('submited');
+});
+
+Route::get('thanks', function() {
+    return view('thanks');
 });

@@ -35,6 +35,6 @@
     margin-top: -10px;
 }
 
-.homepage .tiny__button {
-
+.homepage .tiny__button.filled path {
+    fill: yellow;
 }

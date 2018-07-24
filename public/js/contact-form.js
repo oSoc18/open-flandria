@@ -4,54 +4,10 @@ var $animContainer = $('.animation-container');
 var value = 0;
 var transitionEnd = 'webkitTransitionEnd transitionend';
 
-/**
- * Resets the form back to the default state.
- * ==========================================
- */
-function formReset() {
-    value = 0;
-    $progressBar.val(value);
-<<<<<<< HEAD
-    $('form input').not('button').val('').removeClass('hasInput');
-=======
-    $('form input').not('button').removeClass('hasInput');
->>>>>>> develop-frontend-part2
-    $('.js-form-step').removeClass('left leaving');
-    $('.js-form-step').not('.js-form-step[data-step="1"]').addClass('hidden waiting');
-    $('.js-form-step[data-step="1"]').removeClass('hidden');
-    $('.form-progress-indicator').not('.one').removeClass('active');
-
-    $animContainer.css({
-        'paddingBottom': $('.js-form-step[data-step="1"]').height() + 'px'
-    });
-
-    console.warn('Form reset.');
-    return false;
-}
-
-<<<<<<< HEAD
-=======
-$('.button-add').click(function(){
-    $('.form-step-2 .fieldgroup').append('<li><input type="file" id="photos"/></li>');
-    $animContainer.css({
-        'paddingBottom': $('.js-form-step[data-step="2"]').height() + 'px'
-    });
-});
-
->>>>>>> develop-frontend-part2
-/**
- * Sets up the click handlers on the form. Next/reset.
- * ===================================================
- */
 function setupClickHandlers() {
 
     // Show next form on continue click
-    $('button[type="submit"]').on('click', function(event) {
-<<<<<<< HEAD
-        event.preventDefault();
-        var $currentForm = $(this).parents('.js-form-step');
-        showNextForm($currentForm);
-=======
+    $('input[type="submit"]').on('click', function(event) {
         if($('.required').is(":empty")) {
             $('.alert').css('opacity', '1');
             document.body.scrollTop = 0;
@@ -67,7 +23,6 @@ function setupClickHandlers() {
 
     $('.upload__button').click(function(){
         event.preventDefault();
->>>>>>> develop-frontend-part2
     });
 
     // Reset form on reset button click
@@ -165,8 +120,6 @@ function setupFloatLabels() {
                 }
                 break;
 
-<<<<<<< HEAD
-=======
             case 'TEXTAREA':
                 if (this.value !== '') {
                     this.className = 'hasInput';
@@ -175,7 +128,6 @@ function setupFloatLabels() {
                 }
                 break;
 
->>>>>>> develop-frontend-part2
             default:
                 break;
         }

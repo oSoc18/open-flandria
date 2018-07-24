@@ -15,12 +15,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    {{--<script src="{{ asset('js/sign-form.js') }}" defer></script>--}}
-    {{--<script src="{{ asset('js/upload-form.js') }}" defer></script>--}}
-    <!-- Fonts -->
+{{--<script src="{{ asset('js/sign-form.js') }}" defer></script>--}}
+{{--<script src="{{ asset('js/upload-form.js') }}" defer></script>--}}
+<!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+          rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -36,11 +36,14 @@
     <link href="{{ asset('css/page/show.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/about.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/sign.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/upload.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/submited.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/contact.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
     <div class="header">
-    <div class="header__logo">
+        <div class="header__logo">
             <a class="" href="{{ url('/') }}">
                 <img src="<?= asset("img/logo_openflandria.svg") ?>" alt="">
             </a>
@@ -54,30 +57,35 @@
                     </form>
                 </li>
                 <li class="header__right">
-                    <!-- Right Side Of Navbar -->
                     <ul>
-                        <!-- Authentication Links -->
                         @guest
                             <li class="header__sign">
-                                <a class="" href="{{ route('login') }}">{{ __('auth.login').'/'.__('auth.register') }}</a>
+                                <a class="" href="{{ route('login') }}">{{ __('auth.login')}}</a>/<a
+                                        href="{{route('register')}}">{{__('auth.register')}}</a>
                             </li>
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{route('users.settings')}}">{{__('varia.settings')}}</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                            <li class="header__sign">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" id="dropdownProfileButton"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                         aria-labelledby="dropdownProfileButton">
+                                        <a class="dropdown-item"
+                                           href="{{route('users.settings')}}">{{__('varia.settings')}}</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('auth.logout') }}
-                                    </a>
+                                            {{ __('auth.logout') }}
+                                        </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
                                 </div>
                             </li>
                         @endguest
@@ -86,12 +94,21 @@
                         </li>
                         <li class="header__lang">
                             <ul>
-                                <li>
-                                    <a class="header__lang--en" href="#">en</a>
-                                </li>
-                                <li>
-                                    <a class="header__lang--nl" href="#">nl</a>
-                                </li>
+                                @if(strcmp(Config::get('app.locale'), 'en') == 0)
+                                    <li>
+                                        <a class="header__lang--en header__lang--active" href="/locale/en">en</a>
+                                    </li>
+                                    <li>
+                                        <a class="header__lang--nl" href="/locale/nl">nl</a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a class="header__lang--en" href="/locale/en">en</a>
+                                    </li>
+                                    <li>
+                                        <a class="header__lang--nl header__lang--active" href="/locale/nl">nl</a>
+                                    </li>
+                                @endif
                             </ul>
                         </li>
                     </ul>
@@ -121,6 +138,18 @@
                     <h1 class="footer__title">About open flandria</h1>
                     <a class="footer__item" href="#">What is Open Flandria? </a>
                     <a class="footer__item" href="">Contact</a>
+                    <ul class="footer__social">
+                        <li class="footer__social--item">
+                            <a href="https://www.instagram.com/openflandria/?hl=fr" target="_blank">
+                                <?= include('img/SVG/instagram.php') ?>
+                            </a>
+                        </li>
+                        <li class="footer__social--item">
+                            <a href="https://www.facebook.com/Open-Flandria-181185236077878/" target="_blank">
+                                <?= include('img/SVG/facebook.php') ?>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <h1 class="footer__title">Other</h1>
@@ -147,6 +176,7 @@
     function init() {
         $(".like").on("click", function (ev) {
             ev.preventDefault();
+            ev.stopPropagation();
             var form = $(ev.currentTarget).find('form')[0];
             form.submit();
             return false;

@@ -13,6 +13,7 @@ return [
     'thnksfordownload' => 'Bedankt om te downloaden van Open Flandria!',
     'attribution' => 'Attributie',
     'attributionlink' => 'Foto door :name, [:license], gevonden op Open Flandria [:link]',
+    'other' => 'Andere projecten',
 ];
 
 ?>

@@ -62,5 +62,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\IsAdmin::class,
         'contrib' => \App\Http\Middleware\IsContrib::class,
         'register' => \App\Http\Middleware\CanRegister::class,
+        'lang' => \App\Http\Middleware\Localization::class,
     ];
 }

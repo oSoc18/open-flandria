@@ -27,7 +27,11 @@
                 <div class="show__panel">
                     <ul class="row show__panel__buttons">
                         <li class="show__panel__item col-lg-2">
-                            <a href="#" class="tiny__button like">
+                            @if(Auth::check() && !Auth::user()->likes->where('project_id', $project->id)->isEmpty())
+                                <a href="#" class="tiny__button like filled">
+                            @else
+                                <a href="#" class="tiny__button like">
+                            @endif
                                 <span>Like</span>
                                 <?php include("img/SVG/like.php") ?>
                                 <form action="/projects/like/{{$project->id}}" style="display: none;" method="POST">

@@ -13,11 +13,12 @@
     transition: .4s all;
 }
 
-.c-card__img img {
-    width: 100%;
+.c-card__img {
+    height: 100%;
+    background-size: cover !important;
 }
 
-.c-card__img:hover > .c-card__details {
+.c-card:hover > .c-card__details {
     bottom: 0;
 }
 
@@ -120,7 +121,7 @@
 /******************** Secondary ************************/
 .c-card.secondary {
     padding: 10px;
-    height: 30vh;
+    max-height: 30vh;
 }
 
 .c-card.secondary .u-title__card {
@@ -138,7 +139,7 @@
     opacity: 0;
 }
 
-.c-card.secondary .c-card__img:hover > .c-card__details {
+.c-card.secondary .c-card:hover > .c-card__details {
     opacity: 1;
 }
 

@@ -14,6 +14,8 @@
     position: relative;
     height: 40px;
     width: 40px;
+    outline: none;
+    cursor: pointer;
 }
 
 .tiny__button span {

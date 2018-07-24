@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\URL;
 
 class InviteController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function show(User $user) {
         $secret = config('custom.hmac_secret');
 
