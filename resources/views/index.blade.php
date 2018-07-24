@@ -10,19 +10,48 @@
             <div class="col-lg-6">
                 <h1 class="u-title type-3 u-title__homepage">Most liked projects of the week</h1>
                 <div class="c-card">
+                    <div class="c-card__popup">
+                        <h1 class="u-title type-4">Add to Gallery</h1>
+                        <ul>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                            <li>
+                                <button>Inpiration</button>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="c-card__img">
                         <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
                         <ul>
                             <li>
                                 <button class="c-card__button tiny__button like">
                                     <span>Like</span>
-                                    <?php include ("img/SVG/like.php") ?>
+                                    <?php include("img/SVG/like.php") ?>
                                 </button>
                             </li>
                             <li>
                                 <button class="c-card__button tiny__button bookmark">
                                     <span>Bookmarked</span>
-                                    <?php include ("img/SVG/bookmark.php") ?>
+                                    <?php include("img/SVG/bookmark.php") ?>
                                 </button>
                             </li>
                         </ul>
@@ -46,19 +75,52 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="c-card tiny">
+                            <div id="gallery-popup-1" class="c-card__popup">
+                                <h1 class="u-title type-4">Add to Gallery</h1>
+                                <ul>
+                                    <li>
+                                        <input class="pop__up--value" type="text">
+                                        <button class="pop__up--add">Add</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                    <li>
+                                        <button>Inpiration</button>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="c-card__img">
                                 <img src="<?= asset("img/pic_01.jpg") ?>" class="img-fluid" alt="Responsive image">
                                 <ul>
                                     <li>
                                         <button class="c-card__button tiny__button like">
                                             <span>Like</span>
-                                            <?php include ("img/SVG/like.php") ?>
+                                            <?php include("img/SVG/like.php") ?>
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="c-card__button tiny__button bookmark">
+                                        <button class="c-card__button tiny__button bookmark" id="gallery-btn-1">
                                             <span>Bookmarked</span>
-                                            <?php include ("img/SVG/bookmark.php") ?>
+                                            <?php include("img/SVG/bookmark.php") ?>
                                         </button>
                                     </li>
                                 </ul>
@@ -85,13 +147,14 @@
                                     <li>
                                         <button class="c-card__button tiny__button like">
                                             <span>Like</span>
-                                            <?php include ("img/SVG/like.php") ?>
+                                            <?php include("img/SVG/like.php") ?>
+
                                         </button>
                                     </li>
                                     <li>
                                         <button class="c-card__button tiny__button bookmark">
                                             <span>Bookmarked</span>
-                                            <?php include ("img/SVG/bookmark.php") ?>
+                                            <?php include("img/SVG/bookmark.php") ?>
                                         </button>
                                     </li>
                                 </ul>
@@ -118,13 +181,13 @@
                                     <li>
                                         <button class="c-card__button tiny__button like">
                                             <span>Like</span>
-                                            <?php include ("img/SVG/like.php") ?>
+                                            <?php include("img/SVG/like.php") ?>
                                         </button>
                                     </li>
                                     <li>
                                         <button class="c-card__button tiny__button bookmark">
                                             <span>Bookmarked</span>
-                                            <?php include ("img/SVG/bookmark.php") ?>
+                                            <?php include("img/SVG/bookmark.php") ?>
                                         </button>
                                     </li>
                                 </ul>
@@ -151,13 +214,13 @@
                                     <li>
                                         <button class="c-card__button tiny__button like">
                                             <span>Like</span>
-                                            <?php include ("img/SVG/like.php") ?>
+                                            <?php include("img/SVG/like.php") ?>
                                         </button>
                                     </li>
                                     <li>
                                         <button class="c-card__button tiny__button bookmark">
                                             <span>Bookmarked</span>
-                                            <?php include ("img/SVG/bookmark.php") ?>
+                                            <?php include("img/SVG/bookmark.php") ?>
                                         </button>
                                     </li>
                                 </ul>
