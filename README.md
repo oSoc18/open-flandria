@@ -168,6 +168,13 @@ A gallery belongs to an user, an user can have many gallery. Gallery can have a 
 
 <h3></h3>
 
+## Issues
+
+## Recommandation
+
+-Elastic search
+
+
 ## Authors and contributors
 
 <h3>Author</h3>
