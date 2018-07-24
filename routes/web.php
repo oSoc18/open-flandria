@@ -68,4 +68,12 @@ Route::get('gallery-single', function() {
     return view('gallery-single');
 });
 
+Route::get('all', function() {
+    return view('all-projects');
+});
+
+
+Route::get('search', function() {
+    return view('searchresult');
+});
 

@@ -34,6 +34,7 @@
     <link href="{{ asset('css/page/upload.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/gallery-single.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/submited.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/search.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/contact.css') }}" rel="stylesheet">
 </head>
 <body>
