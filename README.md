@@ -149,7 +149,7 @@ the name of the site + /project will return all the projects of the database bec
         return view('project.index')->with('projects', $projects);
     }
 ```
-#Our own features and explanation
+## Our own features and explanation
 
 We have used the authentication which is provided by Laravel, to see more about it go on the official documentation: https://laravel.com/docs/5.6/authentication.
 
