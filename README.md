@@ -76,7 +76,7 @@ ressources/views/project/index.blade.php
 </body>
 
 ```
-<h3>Models and relation between table</h3>
+<h3>Models and relations between tables</h3>
 
 Thanks to Eloquent, Laravel allows the user to create very simple relations between the table to get the data. For example, in our database we have a relation many to many between *projects* and *tags*. A project can have a lot of tags, and tags can be part of several projects. So in the model project model we create a function: 
 
