@@ -19,6 +19,7 @@
     color: #000;
     float: left;
     z-index: 9999;
+    cursor: pointer;
 }
 
 
