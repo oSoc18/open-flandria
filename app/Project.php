@@ -22,7 +22,7 @@ class Project extends Model
 	    return $this->hasMany('App\Like');
     }
 
-	public function gallery() {
+	public function galleries() {
 		return $this->belongsToMany('App\Gallery');
 	}
 }

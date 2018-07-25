@@ -16,6 +16,27 @@ class GalleryController extends Controller
         return view('gallery.index')->with('galleries', $galleries)->with('likes', $user->likes);
     }
 
+    public function select(Request $request, Project $project){
+        $galleries = Auth::user()->galleries;
+        return view('gallery.select')->with('project', $project)->with('galleries', $galleries);
+    }
+
+    public function add(Request $request, Project $project) {
+        $gallery_new = $request['gallery_new'];
+        if(!isset($gallery_new)) {
+            $gallery_choice = $request['gallery_choice'];
+            $gallery = Gallery::where('name', $gallery_choice)->first();
+        } else {
+            $gallery = new Gallery;
+            $gallery->name = $gallery_new;
+            $gallery->save();
+            $gallery->user()->save(Auth::user());
+        }
+
+        $gallery->projects()->save($project);
+        return redirect()->back();
+    }
+
     public function show(Gallery $gallery)
     {
         return view('gallery.show')->with('gallery', $gallery);

@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/png" href="<?= asset("img/icons/favicon.png") ?>"/>
 
 
     <!-- Scripts -->
@@ -31,30 +32,34 @@
     <link href="{{ asset('css/utilities/title.css') }}" rel="stylesheet">
     <link href="{{ asset('css/components/card.css') }}" rel="stylesheet">
     <link href="{{ asset('css/components/button.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/error.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/homepage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/gallery.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/show.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/about.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/sign.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/upload.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/gallery-single.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/submited.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/search.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/contact.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
     <div class="header">
-        <div class="header__logo">
-            <a class="" href="{{ url('/') }}">
-                <img src="<?= asset("img/logo_openflandria.svg") ?>" alt="">
-            </a>
-        </div>
+        <a class="header__logo" href="{{ url('/') }}">
+            <img src="<?= asset("img/logo_openflandria.svg") ?>" alt="">
+        </a>
         <nav class="navbar navbar-expand-md header__nav">
             <ul class="header__menu-horizontal">
                 <li class="header__center">
-                    <form class="header__search" action="{{route('search')}}" method="GET">
+                    <form class="header__search" action="{{url('search')}}" method="GET">
                         <input type="search" id="query" name="query" placeholder="Treehouse"/>
                         <input type="submit" value=""/>
                     </form>
+                    <a href="/upload">
+                        <button class="c-button header__upload">Upload</button>
+                    </a>
                 </li>
                 <li class="header__right">
                     <ul>
@@ -73,6 +78,7 @@
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right"
                                          aria-labelledby="dropdownProfileButton">
+                                        <a class="dropdown-item" href="{{url('galleries')}}">My Galleries</a>
                                         <a class="dropdown-item"
                                            href="{{route('users.settings')}}">{{__('varia.settings')}}</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"

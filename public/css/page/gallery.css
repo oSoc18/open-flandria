@@ -47,3 +47,21 @@
     background: #000;
     margin-bottom: 30px;
 }
+
+.own-gallery ul li {
+    float: left;
+}
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    background: #fee930;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    color: #000;
+    font-size: 14px;
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 40px;
+    width: 100%;
+}
+

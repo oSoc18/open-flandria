@@ -110,6 +110,16 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        $galleried = false;
+        if(Auth::check()) {
+            $user = Auth::user();
+            $galleries = $user->galleries;
+            $galleries = $galleries->where('user_id', $user->id);
+            foreach($galleries as $gallery) {
+                $galleried = $gallery->projects->contains($project->id);
+            }
+            return view('projects.show')->with('project', $project)->with('galleried', $galleried);
+        }
         return view('projects.show')->with('project', $project);
     }
 

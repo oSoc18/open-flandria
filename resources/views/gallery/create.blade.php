@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
-
 @section('content')
+
 @include('layouts.gallery')
 
 <form action="add" method="POST">
@@ -14,7 +13,4 @@
 
         <input type="submit" value="Create a new Gallery" class="btn btn-primary">
     </form>
-
-
-
 @endsection

@@ -19,11 +19,13 @@
     color: #000;
     float: left;
     z-index: 9999;
+    cursor: pointer;
 }
 
 
 .header__logo img {
-    padding: 0px 10%;
+    margin-top: 7px;
+    padding: 0 10%;
     height: 60px;
 }
 
@@ -69,6 +71,13 @@
     height: 100%;
     padding-left: 10%;
     border: 0;
+}
+
+.header__upload {
+    margin-top: 0 !important;
+    height: 100%;
+    width: 25%;
+    padding: 0 !important;
 }
 
 .header__center {

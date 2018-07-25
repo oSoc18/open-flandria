@@ -82,6 +82,10 @@
     font-size: .7rem;
 }
 
+.contact .hasInput {
+
+}
+
 .contact select {
     border: 1px solid #fff;
     font-size: 1rem;

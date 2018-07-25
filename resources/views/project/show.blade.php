@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-
-
-
 @section('content')
 
     <section class="show show__content">
@@ -83,13 +80,13 @@
                     <h1 class="show__subtitle u-title type-4">Keywords</h1>
                     <ul>
                         <li class="show__keywords__item u-uppercase">
-                            <a href="#">#Eco</a>
+                            <span>#Eco</span>
                         </li>
                         <li class="show__keywords__item u-uppercase">
-                            <a href="#">#Serenity</a>
+                            <span>#Serenity</span>
                         </li>
                         <li class="show__keywords__item u-uppercase">
-                            <a href="#">#Green</a>
+                            <span>#Green</span>
                         </li>
                     </ul>
                 </div>

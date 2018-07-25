@@ -5,7 +5,7 @@
     <section class="about">
         <h1 class="title__about u-title">About</h1>
         <p class="about__desc">
-            Created by Slim Wonen en Leven, Open Flandria is a digital gallery for stakeholders who are interested in sustainable and alternative ways of building and living. Our gallery captures the real and existing solutions for sustainable building and living in Flanders.
+            Created by <a href="https://www.vlaanderen.be/nl/vlaamse-regering/visie-2050/slim-wonen-en-leven" target="_blank">Slim Wonen en Leven</a>, Open Flandria is a digital gallery for stakeholders who are interested in sustainable and alternative ways of building and living. Our gallery captures the real and existing solutions for sustainable building and living in Flanders.
             All the images are free to download and use.
         </p>
         <section class="about__features">

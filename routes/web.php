@@ -30,14 +30,15 @@ Route::get('contact', 'ContactController@index');
 Route::post('contact', 'ContactController@store')->name('contact');
 
 Route::get('galleries', 'GalleryController@index')->middleware('auth');
+Route::get('galleries/select/{project}', 'GalleryController@select')->middleware('auth');
+Route::post('galleries/add/{project}', 'GalleryController@add')->middleware('auth');
+
 Route::get('galleries/{gallery}', 'GalleryController@show')->middleware('auth');
 Route::put('galleries/{gallery}/{project}' , 'GalleryController@update')->middleware('auth');
 Route::post('galleries', 'GalleryController@store')->middleware('auth');
-Route::delete('gallries/{gallery}', 'GalleryController@destroy')->middleware('auth');
-Route::get('galleries/add', 'GalleryController@create')->middleware('auth');
-Route::put('galleries/{gallery}', 'GalleryController@edit')->middleware('auth');
-//Route::get('/galleries/manage' , 'GalleryController@manageAllGalleries')->middleware('auth');
-
+//Route::delete('galleries/{gallery}', 'GalleryController@destroy')->middleware('auth');
+//Route::get('galleries/add', 'GalleryController@create')->middleware('auth');
+//Route::put('galleries/{gallery}', 'GalleryController@edit')->middleware('auth');
 
 Route::get('search', 'SearchController@index')->name('search');
 
@@ -114,3 +115,16 @@ Route::get('submited', function() {
 Route::get('thanks', function() {
     return view('thanks');
 });
+
+Route::get('gallery-single', function() {
+    return view('gallery-single');
+});
+
+Route::get('all', function() {
+    return view('all-projects');
+});
+
+Route::get('error', function() {
+    return view('404');
+});
+

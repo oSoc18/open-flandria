@@ -1,0 +1,28 @@
+
+.gallery-item.new {
+    background: #FFF;
+    border: 3px #000 solid;
+}
+
+.gallery .panel {
+    position: relative;
+}
+
+.gallery .panel button {
+    background: red;
+    font-size: 0;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.gallery .panel button:first-child {
+    background: url('../../img/icons/edit.svg');
+    background-size: 100%;
+}
+.gallery .panel button:last-child {
+    margin-left: 10px;
+    background: url('../../img/icons/remove.svg');
+    background-size: 100%;
+}

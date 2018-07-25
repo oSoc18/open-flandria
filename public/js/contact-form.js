@@ -47,8 +47,6 @@ function setupFloatLabels() {
  */
 function init() {
     formReset();
-    setupFloatLabels();
-    setupClickHandlers();
 }
 
 init();

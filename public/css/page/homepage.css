@@ -2,6 +2,7 @@
     text-align: center;
     margin-top: 40px;
 }
+
 .homepage .u-title__baseline span {
     display: block;
 }
@@ -37,4 +38,16 @@
 
 .homepage .tiny__button.filled path {
     fill: yellow;
+}
+
+.homepage .homepage__button {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.homepage .homepage__button button {
+    padding: 1rem;
+    background: #000;
+    color: white;
+    cursor: pointer;
 }

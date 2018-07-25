@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <figure class="show__img">
-                    <img src="<?= asset($project->images->first()['file']) ?>" class="img-fluid" alt="Responsive image">
+                    <img id="image-{{$project->id}}" src="<?= asset($project->images->first()['file']) ?>" class="img-fluid" alt="Responsive image">
                 </figure>
                 <div class="show__panel">
                     <ul class="row show__panel__buttons">
@@ -41,10 +41,14 @@
                             </a>
                         </li>
                         <li class="show__panel__item col-lg-2">
-                            <button class="tiny__button bookmark">
+                            @if(Auth::check() && $galleried)
+                                <a href="/galleries/select/{{$project->id}}" class="tiny__button bookmark filled">
+                            @else
+                                <a href="/galleries/select/{{$project->id}}" class="tiny__button bookmark">
+                            @endif
                                 <span>Bookmark</span>
                                 <?php include("img/SVG/bookmark.php") ?>
-                            </button>
+                            </a>
                         </li>
                         <li class="show__panel__item col-lg-2">
                             @if(Auth::check() && Auth::user()->hasAnyRole('admin'))
@@ -110,6 +114,7 @@
         </div>
     </section>
 
+    {{--<script src="/js/interact-button.js"></script>--}}
     <script>
         document.addEventListener('DOMContentLoaded', init, false);
 

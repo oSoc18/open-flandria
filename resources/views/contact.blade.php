@@ -5,21 +5,18 @@
         <section class="contact__form">
             <form class="contact__form" action="thanks">
                 <div class="animation-container">
-                    <h1 class="contact__title u-title type-1"> Contact us</h1>
+                    <h1 class="contact__title u-title type-1">Contact us</h1>
                     <p class="contact__desc">
                         If you have any questions, suggestions or need help, please contact us via the form below.
                     </p>
-                    <div style="opacity:0" class="alert alert-danger" role="alert">
-                        Please complete required fields.
-                    </div>
                     <div>
                         <div class="fieldgroup">
-                            <input type="text" name="title" id="title" class="required" required/>
+                            <input type="text" name="title" id="title" required/>
                             <label for="title">Name : *</label>
                         </div>
 
                         <div class="fieldgroup">
-                            <input type="text" name="type" id="type" class="required" required/>
+                            <input type="text" name="type" id="type" required/>
                             <label for="type">Email *</label>
                         </div>
                         <div class="fieldgroup">
@@ -34,12 +31,12 @@
 
 
                         <div class="fieldgroup">
-                            <textarea name="message" id="" cols="30" rows="5"  class="required" required></textarea>
+                            <textarea name="message" id="message" cols="30" rows="5" required></textarea>
                             <label for="message">Your message : *</label>
                         </div>
 
                         <div class="buttons">
-                            <button type="submit" value="send" class="c-button btn">Send</button>
+                            <input type="submit" value="send" class="c-button btn">
                         </div>
                     </div>
                 </div>
