@@ -1,0 +1,14 @@
+.error {
+    height: 100vh;
+}
+
+.error .error__title {
+    font-size: 300px;
+    text-align: center;
+}
+
+.error p {
+    text-align: center;
+    font-size: 20px;
+}
+

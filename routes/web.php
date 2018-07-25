@@ -72,8 +72,12 @@ Route::get('all', function() {
     return view('all-projects');
 });
 
-
 Route::get('search', function() {
     return view('searchresult');
+});
+
+
+Route::get('error', function() {
+    return view('404');
 });
 

@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/png" href="<?= asset("img/icons/favicon.png") ?>" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,6 +27,7 @@
     <link href="{{ asset('css/utilities/title.css') }}" rel="stylesheet">
     <link href="{{ asset('css/components/card.css') }}" rel="stylesheet">
     <link href="{{ asset('css/components/button.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/error.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/homepage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/gallery.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/show.css') }}" rel="stylesheet">
