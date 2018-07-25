@@ -259,3 +259,11 @@
 .upload .alert {
     margin-top: 10px;
 }
+
+.upload .form-step-2 .fieldgroup {
+    margin-top: 20px;
+}
+.upload .form-step-2 li {
+    margin-top: 10px;
+    position: relative;
+}

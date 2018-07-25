@@ -71,6 +71,18 @@
                         <div class="form-step-2">
                             <ul class="fieldgroup">
                                 <li><input type="file" id="photos"></li>
+                                <li>
+                                    <input type="text" name="photos-license" id="photos-license"/>
+                                    <label for="photos-license">Rights : *</label>
+                                </li>
+                                <li>
+                                    <input type="text" name="photos-credits" id="photos-credits"/>
+                                    <label for="photos-credits">Crédits : *</label>
+                                </li>
+                                <li>
+                                    <input type="text" name="photos-year" id="photos-year"/>
+                                    <label for="photos-year">Année : *</label>
+                                </li>
                             </ul>
 
                             <button class="upload__button button-add">Add</button>
