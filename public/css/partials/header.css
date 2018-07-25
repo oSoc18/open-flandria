@@ -23,7 +23,8 @@
 
 
 .header__logo img {
-    padding: 0px 10%;
+    margin-top: 7px;
+    padding: 0 10%;
     height: 60px;
 }
 

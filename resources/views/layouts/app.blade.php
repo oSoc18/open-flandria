@@ -40,17 +40,15 @@
 <body>
 <div id="app">
     <div class="header">
-        <div class="header__logo">
-            <a class="" href="{{ url('/') }}">
-                <img src="<?= asset("img/logo_openflandria.svg") ?>" alt="">
-            </a>
-        </div>
+        <a class="header__logo" href="{{ url('/') }}">
+            <img src="<?= asset("img/logo_openflandria.svg") ?>" alt="">
+        </a>
         <nav class="navbar navbar-expand-md header__nav">
             <ul class="header__menu-horizontal">
                 <li class="header__center">
                     <form class="header__search" action="">
                         <input type="search" placeholder="Search the bulding, location, materials…"/>
-                        <input type="submit" value="" />
+                        <input type="submit" value=""/>
                     </form>
                     <button class="c-button header__upload">Upload</button>
                 </li>
@@ -125,7 +123,7 @@
                     <ul class="footer__social">
                         <li class="footer__social--item">
                             <a href="https://www.instagram.com/openflandria/?hl=fr" target="_blank">
-                                 <?= include('img/SVG/instagram.php') ?>
+                                <?= include('img/SVG/instagram.php') ?>
                             </a>
                         </li>
                         <li class="footer__social--item">
