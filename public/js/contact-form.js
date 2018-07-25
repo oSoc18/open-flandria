@@ -1,6 +1,3 @@
-var $progressBar = $('progress');
-var value = 0;
-
 /**
  * Resets the form back to the default state.
  * ==========================================
@@ -50,8 +47,6 @@ function setupFloatLabels() {
  */
 function init() {
     formReset();
-    setupFloatLabels();
-    setupClickHandlers();
 }
 
 init();

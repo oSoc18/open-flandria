@@ -71,6 +71,13 @@
     border: 0;
 }
 
+.header__upload {
+    margin-top: 0 !important;
+    height: 100%;
+    width: 25%;
+    padding: 0 !important;
+}
+
 .header__center {
     width: 60%;
     float: left;

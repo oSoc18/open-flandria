@@ -30,6 +30,8 @@ $('.pop__up--add').click(function () {
 });
 
 /******************************Add To Gallery*****************************/
+
+
 $('.c-card__popup .pop__up--item').on('click', function () {
     $(this).toggleClass("saved");
     if ($(this).hasClass("saved")) {
@@ -40,3 +42,4 @@ $('.c-card__popup .pop__up--item').on('click', function () {
         $(this).text($(this).val());
     }
 });
+

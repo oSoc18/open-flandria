@@ -52,6 +52,7 @@
                         <input type="search" placeholder="Search the bulding, location, materials…"/>
                         <input type="submit" value="" />
                     </form>
+                    <button class="c-button header__upload">Upload</button>
                 </li>
                 <li class="header__right">
                     <!-- Right Side Of Navbar -->
