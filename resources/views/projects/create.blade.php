@@ -1,143 +1,134 @@
 @extends('layouts.app')
 
 @section('content')
-    <form method="POST" action="/upload" enctype="multipart/form-data" id="upload">
-        @csrf
+    <div class="container">
+        <section class="upload">
+            <div class="form-progress">
+                <progress class="form-progress-bar" min="0" max="100" value="0" step="33" aria-labelledby="form-progress-completion"></progress>
 
-        <input type="hidden" name="amt-of-images" value="1" id="amt-of-images" />
-        <div class="form-group">
-            <label for="title">Title: </label>
-            <input id="title" class="form-control" type="text" name="title">
-        </div>
+                <div class="form-progress-indicator one active"></div>
+                <div class="form-progress-indicator two"></div>
+                <div class="form-progress-indicator three"></div>
+                <div class="form-progress-indicator four"></div>
 
-        <div class="form-group">
-            <label for="location">Location: </label>
-            <input id="location" class="form-control" type="text" name="location">
-        </div>
+                <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0% complete</p>
+            </div>
+            <form class="upload__form" action="{{route('upload')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="animation-container">
+                    <!-- Step one -->
+                    <div class="form-step-1 form-step js-form-step" data-step="1">
+                        <h1 class="upload__title u-title type-1"> Main informations</h1>
+                        <ul class="upload__desc">
+                            <li>Add information about your project</li>
+                            <li>* is required</li>
+                        </ul>
+                        <div style="opacity:0" class="alert alert-danger" role="alert">
+                            Please complete required fields.
+                        </div>
+                        <div action="" name="form-step-1">
+                            <div class="fieldgroup">
+                                <input type="text" name="title" id="title" class="required"/>
+                                <label for="title">{{__('projects.title')}}:*</label>
+                            </div>
 
-        <div class="form-group">
-            <label for="description">Description: </label>
-            <textarea id="description" class="form-control" name="description" cols="30" rows="10"></textarea>
-        </div>
+                            <div class="fieldgroup">
+                                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                                <label for="description">{{__('projects.description')}}:*</label>
+                            </div>
 
-        <div class="form-group">
-            <label for="year">Year: </label>
-            <input id="year" class="form-control" type="number" min="1900" max="2099" step="1" value="2018" name="year">
-        </div>
+                            <div class="fieldgroup">
+                                <input type="text" name="creator" id="creator" class="required"/>
+                                <label for="creator">{{__('projects.creator')}}:*</label>
+                            </div>
 
-        <div class="form-group">
-            <label for="creator">Creator: </label>
-            <input id="creator" class="form-control" type="text" name="creator">
-        </div>
+                            <div class="buttons">
+                                <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
 
-        <div class="form-group" id="images">
+                                <button type="submit" class="c-button btn">Continue</button>
+                            </div>
+                        </div>
 
-        </div>
+                    </div>
 
-        <div class="form-group">
-            <label for="tags">Tags: </label>
-            <input id="tags" class="form-control" type="text" name="tags" aria-described-by="tagHelp">
-            <small id="tagHelp" class="form-text text-muted">Tags should be ;(semicolon) seperated.</small>
-        </div>
+                    <!-- Step two -->
+                    <div class="form-step-2 form-step js-form-step waiting hidden" data-step="2">
+                        <h1 class="u-title type-1">Photos</h1>
+                        <ul class="upload__desc">
+                            <li>Add information about the images</li>
+                            <li>The preferable dimension is 1280x720</li>
+                            <li>No watermarks</li>
+                        </ul>
+                        <div class="form-step-2">
+                            <ul class="fieldgroup">
+                                <input type="hidden" name="amt-of-images" id="amt-of-images" value="0">
+                            </ul>
 
-        <input type="submit" class="btn btn-primary" value="Upload" />
-    </form>
+                            <button class="upload__button button-add">Add</button>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', init, false);
 
-        var counter = 0;
-        var identifier = 'image-'+counter;
+                            <div class="buttons">
+                                <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
 
-        function init() {
-            addImageSlot();
-        }
+                                <button type="submit" class="c-button btn">Continue</button>
+                            </div>
+                        </div>
 
-        function addImageSlot() {
-            counter++;
-            identifier = `image-${counter}`;
+                    </div>
 
-            document.getElementById("amt-of-images").value = counter;
+                    <!-- Step three -->
+                    <div class="form-step-3 form-step js-form-step waiting hidden" data-step="3">
+                        <h1>Further informations</h1>
+                        <ul class="upload__desc">
+                            <li>Add information about your project</li>
+                            <li>* is required</li>
+                        </ul>
+                        <div style="opacity:0" class="alert alert-danger" role="alert">
+                            Please complete required fields.
+                        </div>
+                        <form action="" name="form-step-3">
+                            <div class="fieldgroup">
+                                <input type="text" name="location" id="location"/>
+                                <label for="location">Location</label>
+                            </div>
 
-            container = document.createElement('div');
-            container.className = "form-group image";
+                            <div class="fieldgroup">
+                                <input type="number" min="1900" max="2999" name="year" id="year"/>
+                                <label for="year">Year</label>
+                            </div>
 
-            fileLabel = document.createElement('label');
-            fileLabel.for = identifier;
-            fileLabel.innerHTML = `Image ${counter}: `;
+                            <div class="fieldgroup">
+                                <input type="text" name="tags" id="tags"/>
+                                <label for="tags">Keywords</label>
+                            </div>
 
-            file = document.createElement('input');
-            file.type = "file";
-            file.name = identifier;
-            file.id = identifier;
-            file.className = "form-control";
+                            <div class="buttons">
+                                <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
 
-            fileGroup = document.createElement('div');
-            fileGroup.className = "form-group"
-            fileGroup.appendChild(fileLabel);
-            fileGroup.appendChild(file);
+                                <button type="submit" class="c-button btn">Continue</button>
+                            </div>
+                        </form>
 
-            settings = document.createElement('div');
-            settings.className = `${identifier}-settings`;
+                    </div>
 
-            creditLabel = document.createElement('label');
-            creditLabel.for = `${identifier}-credit`;
-            creditLabel.innerHTML = `Credit image ${counter}: `;
+                    <!-- Step four -->
+                    <div class="form-step-4 form-step js-form-step waiting hidden" data-step="4">
+                        <h1>Confirm</h1>
+                        <div style="opacity:0" class="alert alert-danger" role="alert">
+                            Please complete required fields.
+                        </div>
+                        <div name="form-step-4">
+                            <p>Do you confirm all your elements are ok to send ?</p>
 
-            credit = document.createElement('input');
-            credit.type = "text";
-            credit.name = `${identifier}-credit`;
-            credit.id = `${identifier}-credit`;
-            credit.className = "form-control";
-
-            creditGroup = document.createElement('div');
-            creditGroup.className = "form-group"
-            creditGroup.appendChild(creditLabel);
-            creditGroup.appendChild(credit);
-
-            copyrightLabel = document.createElement('label');
-            copyrightLabel.for = `${identifier}-license`;
-            copyrightLabel.innerHTML = `License image ${counter}: `;
-
-            copyright = document.createElement('input');
-            copyright.type = "text";
-            copyright.name = `${identifier}-license`;
-            copyright.id = `${identifier}-license`;
-            copyright.className = "form-control";
-
-            copyrightGroup = document.createElement('div');
-            copyrightGroup.className = "form-group"
-            copyrightGroup.appendChild(copyrightLabel);
-            copyrightGroup.appendChild(copyright);
-
-            yearLabel = document.createElement('label');
-            yearLabel.for = `${identifier}-year`;
-            yearLabel.innerHTML = `Year image ${counter}: `;
-
-            year = document.createElement('input');
-            year.type = "text";
-            year.name = `${identifier}-year`;
-            year.id = `${identifier}-year`;
-            year.className = "form-control";
-
-            yearGroup = document.createElement('div');
-            yearGroup.className = "form-group"
-            yearGroup.appendChild(yearLabel);
-            yearGroup.appendChild(year);
-
-            settings.appendChild(creditGroup);
-            settings.appendChild(copyrightGroup);
-            settings.appendChild(yearGroup);
-
-            container.appendChild(fileGroup);
-            container.appendChild(settings);
-
-            document.getElementById('images').appendChild(container);
-
-            document.getElementById(identifier).addEventListener("change", function(ev) {
-                console.log(ev);
-                addImageSlot();
-            });
-        }
-    </script>
+                            <div class="buttons">
+                                <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
+                                <input type="submit" value="submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script src="{{ asset('js/upload-form.js') }}" defer></script>
 @endsection

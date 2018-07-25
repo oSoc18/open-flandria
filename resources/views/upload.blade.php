@@ -1,123 +1,145 @@
-<section class="section">
-    <h1>So you think you can create an ID?</h1>
+@extends('layouts.app')
 
-    <div class="form-progress">
-        <progress class="form-progress-bar" min="0" max="100" value="0" step="33" aria-labelledby="form-progress-completion"></progress>
+@section('content')
 
-        <div class="form-progress-indicator one active"></div>
-        <div class="form-progress-indicator two"></div>
-        <div class="form-progress-indicator three"></div>
-        <div class="form-progress-indicator four"></div>
+<div class="container">
+    <section class="upload">
+        <div class="form-progress">
+            <progress class="form-progress-bar" min="0" max="100" value="0" step="33" aria-labelledby="form-progress-completion"></progress>
 
-        <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0% complete</p>
-    </div>
+            <div class="form-progress-indicator one active"></div>
+            <div class="form-progress-indicator two"></div>
+            <div class="form-progress-indicator three"></div>
+            <div class="form-progress-indicator four"></div>
 
-
-    <div class="animation-container">
-        <!-- Step one -->
-        <div class="form-step js-form-step" data-step="1">
-
-            <p class="form-instructions"><strong>Click the continue button to show form progression.</strong><br>
-                Please fill out the fields below so we can learn some information about you. We promise to store these on Post-It<sup><small>TM</small></sup> notes around the office.</p>
-
-            <form action="" name="form-step-1">
-                <div class="fieldgroup">
-                    <input type="text" name="firstName" id="firstName" />
-                    <label for="firstName">First name</label>
-                </div>
-
-                <div class="fieldgroup">
-                    <input type="text" name="lastName" id="lastName" />
-                    <label for="lastName">Last name</label>
-                </div>
-
-                <div class="fieldgroup">
-                    <input type="text" name="email" id="email" />
-                    <label for="email">Email</label>
-                </div>
-
-                <div class="fieldgroup">
-                    <input type="text" name="postalCode" id="postalCode" />
-                    <label for="postalCode">Postal code</label>
-                </div>
-
-                <div class="buttons">
-                    <button type="button" class="btn btn-alt js-reset">Reset</button>
-
-                    <button type="submit" class="btn">Continue</button>
-                </div>
-            </form>
-
+            <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0% complete</p>
         </div>
+        <form class="upload__form" action="submited">
+            <div class="animation-container">
+                <!-- Step one -->
+                <div class="form-step-1 form-step js-form-step" data-step="1">
+                    <h1 class="upload__title u-title type-1"> Main informations</h1>
+                    <ul class="upload__desc">
+                        <li>Add information about your project</li>
+                        <li>* is required</li>
+                    </ul>
+                    <div style="opacity:0" class="alert alert-danger" role="alert">
+                        Please complete required fields.
+                    </div>
+                    <div action="" name="form-step-1">
+                        <div class="fieldgroup">
+                            <input type="text" name="title" id="title" class="required"/>
+                            <label for="title">Title : *</label>
+                        </div>
 
-        <!-- Step two -->
-        <div class="form-step js-form-step waiting hidden" data-step="2">
+                        <div class="fieldgroup">
+                            <input type="text" name="type" id="type" class="required"/>
+                            <label for="type">Type of the project *</label>
+                        </div>
 
-            <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
-                <br> Please fill in the token below with yesterday's date plus the timestamp from the day of your birth (expressed as an integer) to the power of fourteen divided by two.</p>
+                        <div class="fieldgroup">
+                            <textarea name="description" id="" cols="30" rows="5"></textarea>
+                            <label for="description">Project description : *</label>
+                        </div>
 
-            <form action="" name="form-step-2">
-                <div class="fieldgroup">
-                    <input type="text" name="token" id="token" />
-                    <label for="token">Token</label>
+                        <div class="fieldgroup">
+                            <input type="text" name="architects" id="architects" class="required"/>
+                            <label for="architects">Architects : *</label>
+                        </div>
+
+                        <div class="fieldgroup">
+                            <input type="text" name="photographers" id="photographers" class="required"/>
+                            <label for="photographers">Photographers : *</label>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
+
+                            <button type="submit" class="c-button btn">Continue</button>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="buttons">
-                    <button type="button" class="btn btn-alt js-reset">Reset</button>
+                <!-- Step two -->
+                <div class="form-step-2 form-step js-form-step waiting hidden" data-step="2">
+                    <h1 class="u-title type-1">Photos</h1>
+                    <ul class="upload__desc">
+                        <li>Add information about the images</li>
+                        <li>The preferable dimension is 1280x720</li>
+                        <li>No watermarks</li>
+                    </ul>
+                    <div class="form-step-2">
+                        <ul class="fieldgroup">
+                            <li><input type="file" id="photos"></li>
+                        </ul>
 
-                    <button type="submit" class="btn">Continue</button>
-                </div>
-            </form>
-
-        </div>
+                        <button class="upload__button button-add">Add</button>
 
 
+                        <div class="buttons">
+                            <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
 
-        <!-- Step three -->
-        <div class="form-step js-form-step waiting hidden" data-step="3">
+                            <button type="submit" class="c-button btn">Continue</button>
+                        </div>
+                    </div>
 
-            <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
-                <br> Please tell us your credit card information. We promise not to store it or use it to buy a new iPhone in the App Store.</p>
-
-            <form action="" name="form-step-3">
-                <div class="fieldgroup">
-                    <input type="text" name="credit-card" id="credit-card" />
-                    <label for="credit-card">Credit card number</label>
-                </div>
-
-                <div class="fieldgroup">
-                    <input type="text" name="credit-card-expiry" id="credit-card-expiry" />
-                    <label for="credit-card-expiry">Credit card expiry</label>
                 </div>
 
-                <div class="buttons">
-                    <button type="button" class="btn btn-alt js-reset">Reset</button>
+                <!-- Step three -->
+                <div class="form-step-3 form-step js-form-step waiting hidden" data-step="3">
+                    <h1>Further informations</h1>
+                    <ul class="upload__desc">
+                        <li>Add information about your project</li>
+                        <li>* is required</li>
+                    </ul>
+                    <div style="opacity:0" class="alert alert-danger" role="alert">
+                        Please complete required fields.
+                    </div>
+                    <form action="" name="form-step-3">
+                        <div class="fieldgroup">
+                            <input type="text" name="location" id="location"/>
+                            <label for="location">Location</label>
+                        </div>
 
-                    <button type="submit" class="btn">Continue</button>
+                        <div class="fieldgroup">
+                            <input type="text" name="year-build" id="year-build"/>
+                            <label for="year-build">Year of build</label>
+                        </div>
+
+                        <div class="fieldgroup">
+                            <input type="text" name="keywords" id="keywords"/>
+                            <label for="keywords">Keywords</label>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
+
+                            <button type="submit" class="c-button btn">Continue</button>
+                        </div>
+                    </form>
+
                 </div>
-            </form>
 
-        </div>
+                <!-- Step four -->
+                <div class="form-step-4 form-step js-form-step waiting hidden" data-step="4">
+                    <h1>Confirm</h1>
+                    <div style="opacity:0" class="alert alert-danger" role="alert">
+                        Please complete required fields.
+                    </div>
+                    <div name="form-step-4">
+                        <p>Do you confirm all your elements are ok to send ?</p>
 
-
-
-        <!-- Step four -->
-        <div class="form-step js-form-step waiting hidden" data-step="4">
-
-            <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
-                <br> Finally, please just write the words "I Agree" in the field below to consent to us using the previous data you entered to buy a new iPhone.</p>
-
-            <form action="" name="form-step-4">
-                <div class="fieldgroup">
-                    <input type="text" name="agreen" id="agreen" />
-                    <label for="agreen">I agree</label>
+                        <div class="buttons">
+                            <button type="button" class="c-button btn btn-alt js-reset">Reset</button>
+                            <input type="submit" value="submit">
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </form>
+    </section>
+</div>
+<script src="{{ asset('js/upload-form.js') }}" defer></script>
 
-                <div class="buttons">
-                    <button type="button" class="btn btn-alt js-reset">Reset</button>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</section>
+@endsection

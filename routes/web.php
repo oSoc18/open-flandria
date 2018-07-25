@@ -23,9 +23,23 @@ Route::put('projects/update/{project}', 'ProjectController@update')->middleware(
 Route::delete('projects/remove/{project}', 'ProjectController@destroy')->middleware('admin');
 Route::post('projects/like/{project}', 'ProjectController@like')->middleware('auth');
 
-Route::get('search', 'SearchController@index')->name('search');
+Route::get('upload', 'ProjectController@create')->middleware('auth');
+Route::post('upload', 'ProjectController@store')->middleware('auth');
 
-Route::get('user/gallery', 'UserController@index');
+Route::get('contact', 'ContactController@index');
+Route::post('contact', 'ContactController@store')->name('contact');
+
+Route::get('galleries', 'GalleryController@index')->middleware('auth');
+Route::get('galleries/{gallery}', 'GalleryController@show')->middleware('auth');
+Route::put('galleries/{gallery}/{project}' , 'GalleryController@update')->middleware('auth');
+Route::post('galleries', 'GalleryController@store')->middleware('auth');
+Route::delete('gallries/{gallery}', 'GalleryController@destroy')->middleware('auth');
+Route::get('galleries/add', 'GalleryController@create')->middleware('auth');
+Route::put('galleries/{gallery}', 'GalleryController@edit')->middleware('auth');
+//Route::get('/galleries/manage' , 'GalleryController@manageAllGalleries')->middleware('auth');
+
+
+Route::get('search', 'SearchController@index')->name('search');
 
 Route::get('user/settings', 'SettingsController@index')->middleware('auth')->name('users.settings');
 Route::put('user/settings/update', 'SettingsController@update')->middleware('auth');
@@ -89,9 +103,9 @@ Route::get('up', function() {
     return view('up');
 });
 
-Route::get('contact', function() {
-    return view('contact');
-});
+//Route::get('contact', function() {
+//    return view('contact');
+//});
 
 Route::get('submited', function() {
     return view('submited');

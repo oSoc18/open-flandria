@@ -8,6 +8,7 @@
         <div class="homepage__content row">
             <div class="col-lg-6">
                 <h1 class="u-title type-3 u-title__homepage">{{__('projects.mostliked')}}</h1>
+                @if(isset($most_likes_week))
                 <div class="c-card">
                     <a href="/projects/{{$most_likes_week->id}}" class="c-card__img"
                        style="background: url({{asset($most_likes_week->images->first()['file'])}}); display: block;">
@@ -44,6 +45,7 @@
                         </div>
                     </a>
                 </div>
+                @endif
             </div>
             <div class="col-lg-6 col-md-12">
                 <h1 class="u-title type-3 u-title__homepage">{{__('projects.other')}}</h1>

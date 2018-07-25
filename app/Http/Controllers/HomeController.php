@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Project;
 use App\Like;
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\Contact;
 
 class HomeController extends Controller
 {

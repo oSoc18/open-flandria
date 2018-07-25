@@ -2,6 +2,7 @@ var $body = $('body');
 var $progressBar = $('progress');
 var $animContainer = $('.animation-container');
 var value = 0;
+var counter = 0;
 var transitionEnd = 'webkitTransitionEnd transitionend';
 
 /**
@@ -11,11 +12,7 @@ var transitionEnd = 'webkitTransitionEnd transitionend';
 function formReset() {
     value = 0;
     $progressBar.val(value);
-<<<<<<< HEAD
-    $('form input').not('button').val('').removeClass('hasInput');
-=======
     $('form input').not('button').removeClass('hasInput');
->>>>>>> develop-frontend-part2
     $('.js-form-step').removeClass('left leaving');
     $('.js-form-step').not('.js-form-step[data-step="1"]').addClass('hidden waiting');
     $('.js-form-step[data-step="1"]').removeClass('hidden');
@@ -29,16 +26,61 @@ function formReset() {
     return false;
 }
 
-<<<<<<< HEAD
-=======
 $('.button-add').click(function(){
-    $('.form-step-2 .fieldgroup').append('<li><input type="file" id="photos"/></li>');
+    counter++;
+    var li = document.createElement('li');
+    var input = document.createElement('input');
+    input.type = "file";
+    input.id = "photos-" + counter;
+    input.name = "photos-" + counter;
+    li.appendChild(input);
+
+    var rights = document.createElement('li');
+    var rightsInput = document.createElement('input');
+    rightsInput.type = "text";
+    rightsInput.name = "rights-photos-" + counter;
+    rightsInput.id = "rights-photos-" + counter;
+    var rightsLabel = document.createElement('label');
+    rightsLabel.for = "rights-photos-" + counter;
+    rightsLabel.innerHTML = "Rights:*";
+    rights.appendChild(rightsInput);
+    rights.appendChild(rightsLabel);
+
+    var credits = document.createElement('li');
+    var creditsInput = document.createElement('input');
+    creditsInput.type = "text";
+    creditsInput.name = "credits-photos-" + counter;
+    creditsInput.id = "credits-photos-" + counter;
+    var creditsLabel = document.createElement('label');
+    creditsLabel.for = "credits-photos-" + counter;
+    creditsLabel.innerHTML = "Credits:*";
+    credits.appendChild(creditsInput);
+    credits.appendChild(creditsLabel);
+
+    var year = document.createElement('li');
+    var yearInput = document.createElement('input');
+    yearInput.type = "text";
+    yearInput.name = "year-photos-" + counter;
+    yearInput.id = "year-photos-" + counter;
+    var yearLabel = document.createElement('label');
+    yearLabel.for = "year-photos-" + counter;
+    yearLabel.innerHTML = "Year:*";
+    year.appendChild(yearInput);
+    year.appendChild(yearLabel);
+
+
+
+    $('.form-step-2 .fieldgroup').append(li);
+    $('.form-step-2 .fieldgroup').append(rights);
+    $('.form-step-2 .fieldgroup').append(credits);
+    $('.form-step-2 .fieldgroup').append(year);
+
+    $('#amt-of-images').val(counter);
     $animContainer.css({
         'paddingBottom': $('.js-form-step[data-step="2"]').height() + 'px'
     });
 });
 
->>>>>>> develop-frontend-part2
 /**
  * Sets up the click handlers on the form. Next/reset.
  * ===================================================
@@ -47,11 +89,6 @@ function setupClickHandlers() {
 
     // Show next form on continue click
     $('button[type="submit"]').on('click', function(event) {
-<<<<<<< HEAD
-        event.preventDefault();
-        var $currentForm = $(this).parents('.js-form-step');
-        showNextForm($currentForm);
-=======
         if($('.required').is(":empty")) {
             $('.alert').css('opacity', '1');
             document.body.scrollTop = 0;
@@ -67,7 +104,6 @@ function setupClickHandlers() {
 
     $('.upload__button').click(function(){
         event.preventDefault();
->>>>>>> develop-frontend-part2
     });
 
     // Reset form on reset button click
@@ -145,12 +181,12 @@ function showNextForm($currentForm) {
  */
 function setupFloatLabels() {
     // Check the inputs to see if we should keep the label floating or not
-    $('form input').not('button').on('blur', function() {
+    $('form input, form textarea').not('button').on('blur', function() {
 
         // Different validation for different inputs
         switch (this.tagName) {
-            case 'SELECT':
-                if (this.value > 0) {
+            case 'TEXTAREA':
+                if (this.value !== '') {
                     this.className = 'hasInput';
                 } else {
                     this.className = '';
@@ -165,8 +201,6 @@ function setupFloatLabels() {
                 }
                 break;
 
-<<<<<<< HEAD
-=======
             case 'TEXTAREA':
                 if (this.value !== '') {
                     this.className = 'hasInput';
@@ -175,7 +209,6 @@ function setupFloatLabels() {
                 }
                 break;
 
->>>>>>> develop-frontend-part2
             default:
                 break;
         }

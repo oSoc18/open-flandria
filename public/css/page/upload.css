@@ -11,7 +11,6 @@
 }
 
 .upload form {
->>>>>>> develop-frontend-part2
     margin: 2rem auto;
     width: 100%;
     max-width: 330px;
@@ -55,10 +54,12 @@
 .upload input[type="text"]:focus, .upload textarea:focus {
     outline: none;
 }
+
 .upload input[type="text"]:valid, .upload textarea:valid {
     border-color: #444;
 }
-.upload  input[type="text"]:focus + label, .upload input[type="text"].hasInput + label, .upload textarea:focus + label, .upload textarea.hasInput + label {
+
+.upload input[type="text"]:focus + label, .upload input[type="text"].hasInput + label, .upload textarea:focus + label, .upload textarea.hasInput + label {
     top: -.8rem;
     font-size: .7rem;
 }
@@ -66,11 +67,10 @@
 .upload .buttons {
     display: flex;
 }
+
 .upload .buttons .btn {
     margin-right: 15px;
 }
-
-
 
 .upload .form-progress {
     position: relative;
@@ -99,6 +99,7 @@
 .upload progress::-webkit-progress-bar {
     background-color: #ddd;
 }
+
 .upload progress::-webkit-progress-value {
     background-color: #F8E71C;
     transition: all 0.5s ease-in-out;
@@ -118,18 +119,23 @@
     transition-delay: .3s;
     will-change: transform;
 }
+
 .upload .form-progress-indicator.one {
     left: 0;
 }
+
 .upload .form-progress-indicator.two {
     left: 33%;
 }
+
 .upload .form-progress-indicator.three {
     left: 66%;
 }
+
 .upload .form-progress-indicator.four {
     left: 100%;
 }
+
 .upload .form-progress-indicator.active {
     -webkit-animation: bounce .5s forwards;
     animation: bounce .5s forwards;
@@ -182,6 +188,7 @@
         transform: translateX(-400px);
     }
 }
+
 @-webkit-keyframes right-and-in {
     100% {
         opacity: 1;
@@ -189,6 +196,7 @@
         transform: translateX(0);
     }
 }
+
 @keyframes right-and-in {
     100% {
         opacity: 1;
@@ -196,6 +204,7 @@
         transform: translateX(0);
     }
 }
+
 @-webkit-keyframes bounce {
     50% {
         -webkit-transform: scale(1.5);
@@ -206,6 +215,7 @@
         transform: scale(1);
     }
 }
+
 @keyframes bounce {
     50% {
         -webkit-transform: scale(1.5);
@@ -216,6 +226,7 @@
         transform: scale(1);
     }
 }
+
 .upload .sr-only {
     position: absolute;
     width: 1px;
@@ -261,4 +272,13 @@
 
 .upload .alert {
     margin-top: 10px;
+}
+
+.upload .form-step-2 .fieldgroup {
+    margin-top: 20px;
+}
+
+.upload .form-step-2 li {
+    margin-top: 10px;
+    position: relative;
 }

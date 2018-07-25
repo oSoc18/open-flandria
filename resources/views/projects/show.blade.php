@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li class="show__panel__item col-lg-4 text-right">
-                            License : <span>{{$project->images->first()['license']}}</span>
+                            Rights: <span>{{$project->images->first()['license']}}</span>
                         </li>
                     </ul>
                 </div>

@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Project;
+use App\Gallery;
 use App\Image;
 use App\Tag;
 use App\Like;
@@ -78,8 +79,8 @@ class ProjectController extends Controller
         }
 
         $amtImages = $request['amt-of-images'];
-        for ($i = 1; $i < $amtImages; $i++) {
-            $identifier = 'image-' . $i;
+        for ($i = 1; $i <= $amtImages; $i++) {
+            $identifier = 'photos-' . $i;
             $file = $request->file($identifier);
             if ($request->hasFile($identifier)) {
                 $image = new Image;
@@ -89,9 +90,9 @@ class ProjectController extends Controller
                 $path = substr($path, strlen($prefix));
 
                 $image->file = "storage/".$path;
-                $image->credit = $request[$identifier.'-credit'];
-                $image->license = $request[$identifier.'-license'];
-                $image->year = $request[$identifier.'-year'];
+                $image->credit = $request['credits-'.$identifier];
+                $image->license = $request['rights-'.$identifier];
+                $image->year = $request['year-'.$identifier];
                 $image->project_id = $project->id;
                 $image->downloads = 0;
                 $image->save();

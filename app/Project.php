@@ -21,4 +21,8 @@ class Project extends Model
 	public function likes() {
 	    return $this->hasMany('App\Like');
     }
+
+	public function gallery() {
+		return $this->belongsToMany('App\Gallery');
+	}
 }

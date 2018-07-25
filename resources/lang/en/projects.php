@@ -5,6 +5,7 @@ return [
     'other' => 'Other projects',
     'all' => 'All projects',
 
+    'title' => 'Title',
     'description' => 'Description',
     'creator' => 'Creator',
     'photographer' => 'Photographer',

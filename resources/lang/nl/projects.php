@@ -5,6 +5,7 @@ return [
     'other' => 'Andere projecten',
     'all' => 'Alle projecten',
 
+    'title' => 'Titel',
     'description' => 'Beschrijving',
     'creator' => 'Maker',
     'photographer' => 'Fotograaf',
