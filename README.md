@@ -1,24 +1,23 @@
 # flandria-2050
 
 Database Agentschap Slim Wonen en Leven.
-Link if the website: openflandria.be
+Link if the website: https://www.openflandria.be
 
-## Getting Started
-
-To launch the server, open the console in the project folder an tap:
+## Getting started
 
 ```
-php artisan serve
+1. composer install
+2. create .env file based on the .env.example
+3. create key: php artisan key:generate
+4. php artisan serve
 ```
 
 ### Prerequisites
 
-To launch the project you need php 7.2.2, MySQL and a server manager (XAMP, WAMP,...)
-Be sure to have this version of php.
+- PHP version 7.2 or later (Argon2 support)
+- MySQL
 
 ## Database Conception
-
-The main table is projects. Here are the tables of the database:
 
 -projects (id,title,location,year,creator,created_at,update_at,user_id)<br>
 
