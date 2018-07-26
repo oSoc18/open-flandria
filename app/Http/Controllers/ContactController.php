@@ -21,7 +21,7 @@ class ContactController extends Controller
         $subject = $request['subject'];
         $content = $request['message'];
 
-        Mail::to("contact@openflandria.be")->send(new Contact($name, $email, $subject, $content));
+        //Mail::to("contact@openflandria.be")->send(new Contact($name, $email, $subject, $content));
         return view('contact.thanks');
     }
 }

@@ -34,7 +34,7 @@ class GalleryController extends Controller
         }
 
         $gallery->projects()->save($project);
-        return redirect()->back();
+        return redirect(url('/projects/'.$project->id));
     }
 
     public function show(Gallery $gallery)
