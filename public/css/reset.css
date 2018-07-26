@@ -1,0 +1,19 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button:active {
+    outline: none;
+    border: none;
+}

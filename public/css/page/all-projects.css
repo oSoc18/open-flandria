@@ -1,0 +1,29 @@
+.search__title {
+    margin: 50px 0;
+}
+
+.search__title::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #000;
+    margin-bottom: 50px;
+}
+
+.search .u-title__card {
+    float: left;
+    margin-top: 15px;
+}
+
+.search .c-card__details__creators {
+    margin-top: 5px;
+}
+
+.search .c-card__img > .c-card__details {
+    bottom: 0;
+}
+
+.search .tiny__button.filled path {
+    fill: #FFF200;
+}

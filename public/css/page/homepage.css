@@ -1,0 +1,53 @@
+.homepage .u-title__baseline {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.homepage .u-title__baseline span {
+    display: block;
+}
+
+.homepage .u-title__baseline span:first-child {
+    text-indent: 100px;
+}
+
+.homepage .u-title__homepage::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #000;
+    margin: 10px 7.5px 0 0;
+    width: 80px;
+}
+
+.homepage__content {
+    margin-top: 75px;
+}
+
+.homepage__content .u-title__homepage {
+    margin-bottom: 10px;
+}
+
+.homepage .u-title__card {
+    color: #777;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.homepage .tiny__button.filled path {
+    fill: yellow;
+}
+
+.homepage .homepage__button {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.homepage .homepage__button button {
+    padding: 1rem;
+    background: #000;
+    color: white;
+    cursor: pointer;
+}

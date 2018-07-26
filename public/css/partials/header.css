@@ -1,0 +1,187 @@
+.header {
+    width: 100%;
+    position: relative;
+    height: 75px;
+}
+
+.header__nav {
+    width: 80%;
+    float: left;
+    padding: 0;
+    height: 100%;
+}
+
+.header__logo {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background: #F8E71C;
+    color: #000;
+    float: left;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+
+.header__logo img {
+    margin-top: 7px;
+    padding: 0 10%;
+    height: 60px;
+}
+
+.header__logo a {
+    position: relative;
+    display: block;
+    top: 50%;
+    margin-top: -27.5px;
+}
+
+.header__logo img {
+    float: left;
+    padding: 0 10px;
+}
+
+.header__logo h1 {
+    line-height: 35px;
+    color: #000;
+}
+
+.header__logo span {
+    float: left;
+    display: inline;
+    font-size: 18px;
+}
+
+.header__logo span:nth-child(2) {
+    font-weight: 300;
+}
+
+.header__search {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    float: left;
+    margin-left: -5%;
+    z-index: 10;
+}
+
+.header__search input[type="search"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    border: 0;
+}
+
+.header__upload {
+    margin-top: 0 !important;
+    height: 100%;
+    width: 25%;
+    padding: 0 !important;
+}
+
+.header__center {
+    width: 60%;
+    float: left;
+}
+
+.header__right {
+    width: 40%;
+    float: left;
+    position: relative;
+}
+
+.header__right a {
+    color: #000;
+    font-size: 14px;
+}
+
+.header__sign {
+    float: left;
+    margin-top: 25px;
+    width: 30%;
+}
+
+.header__bar {
+    float: left;
+    width: 42%;
+    margin-left: 4%;
+    margin-right: 4%;
+    height: 1px !important;
+    background: #979797;
+    position: relative;
+    margin-top: 37.5px;
+}
+
+.header__lang {
+    float: left;
+    margin-top: 25px;
+    width: 20%;
+}
+
+.header__lang ul {
+    width: 100%;
+}
+
+.header__sign a {
+    font-weight: 600;
+}
+
+.header__lang li {
+    float: left;
+}
+
+.header__lang--en {
+    margin-left: 1%;
+    margin-right: 10px;
+}
+.header__lang--en::after {
+    display: block;
+    float: right;
+}
+
+.header__lang li a {
+    font-weight: 700;
+    opacity: 0.5;
+}
+
+.header__lang li a.header__lang--active {
+    opacity: 1;
+}
+
+.header__menu-horizontal {
+    width: 100%;
+    height: 100%;
+}
+
+.header__menu-horizontal li {
+    height: 100%;
+}
+
+.header__search input[type="submit"] {
+    width: 10%;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    background: url('../../img/icons/search.svg') center center no-repeat;
+    border: none;
+    background-size: 50%;
+}
+
+
+.header__menu-vertical {
+    position: absolute;
+    right: -50px;
+    transform: rotate(90deg);
+    margin-top: 150px;
+}
+
+.header__menu-vertical li {
+    float: left;
+}
+
+.header__menu-vertical a {
+    font-family: "Montserrat";
+    color: #000;
+    font-weight: 400;
+}
